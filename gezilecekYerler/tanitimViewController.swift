@@ -14,11 +14,16 @@ class tanitimViewController: UIViewController {
     @IBOutlet weak var baslik: UILabel!
     @IBOutlet weak var aciklama: UITextView!
     
+    var resim1 = UIImage()
+    var baslik1=""
+    var aciklama1=""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       resim.image=resim1
+        baslik.text=baslik1
+        aciklama.text=aciklama1
     }
     
 
