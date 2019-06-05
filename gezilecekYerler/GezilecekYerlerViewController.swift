@@ -75,16 +75,24 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            // This solution assumes  you've got the file in your bundle
+            if let path = Bundle.main.path(forResource: "aciklamalar", ofType: "txt"){
+                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+                aciklamalar = data.components(separatedBy: "--")
+               
+            }
+        } catch let err as NSError {
+            // do something with Error
+            print(err)
+        }
 
         gezilecekYerlerTableView.dataSource=self
         gezilecekYerlerTableView.delegate=self
         
-        aciklamalar.append("konak güzeldir")
-        aciklamalar.append("alsancak güzeldir")
-        aciklamalar.append("kemeralti güzeldir")
-        aciklamalar.append("ayasofya güzeldir")
-        aciklamalar.append("sultanahmet güzeldir")
-        aciklamalar.append("topkapı güzeldir")
+        
+     
         
         
         fotolar.append(UIImage(named: "konak.jpg")!)

@@ -69,9 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         tableView.dataSource=self
         tableView.delegate=self
         
-        sehirler.append("izmir")
-        sehirler.append("istanbul")
-        sehirler.append("ankara")
+       
         
         izmirGezilecekYerler.append("konak")
         izmirGezilecekYerler.append("alsancak")
@@ -80,6 +78,30 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         istanbulGezilecekYerler.append("Ayasofya Müzesi")
         istanbulGezilecekYerler.append("Sultan Ahmet Camii")
         istanbulGezilecekYerler.append("Topkapi")
+        
+        do {
+            // This solution assumes  you've got the file in your bundle
+            if let path = Bundle.main.path(forResource: "sehirler", ofType: "txt"){
+                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+                sehirler = data.components(separatedBy: "--")
+                
+            }
+        } catch let err as NSError {
+            // do something with Error
+            print(err)
+        }
+        
+        do {
+            // This solution assumes  you've got the file in your bundle
+            if let path = Bundle.main.path(forResource: "izmirGezilecekYerler", ofType: "txt"){
+                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+                izmirGezilecekYerler = data.components(separatedBy: "--")
+                
+            }
+        } catch let err as NSError {
+            // do something with Error
+            print(err)
+        }
         
         // Do any additional setup after loading the view.
     }
