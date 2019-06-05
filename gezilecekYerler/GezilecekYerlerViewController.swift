@@ -19,6 +19,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     var seciliGezilecekYer = ""
     var seciliResim = UIImage()
     var seciliAciklama = ""
+    var seciliSehir=""
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        let tanitimVC = segue.destination as! tanitimViewController
@@ -31,14 +32,30 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //konak , alsc vb. ait değerler
+        
         seciliGezilecekYer = SegGezilecekYerler[indexPath.row]
-        seciliAciklama = aciklamalar[indexPath.row]
-        seciliResim = fotolar[indexPath.row]
+        
+        if seciliSehir=="izmir"{
     
-       performSegue(withIdentifier: "tanitimBaglantisi", sender: nil)
+       seciliAciklama = aciklamalar[indexPath.row]
+       seciliResim = fotolar[indexPath.row]}
+        if seciliSehir=="istanbul"{
+      
+            seciliAciklama = aciklamalar[(indexPath.row+3)]
+            seciliResim = fotolar[(indexPath.row+3)]
+            
+        }
+            
         
         
-    }
+        
+             performSegue(withIdentifier: "tanitimBaglantisi", sender: nil)
+        }
+      
+        
+        
+    
    
  
     
@@ -62,13 +79,23 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
         gezilecekYerlerTableView.dataSource=self
         gezilecekYerlerTableView.delegate=self
         
-        aciklamalar.append("1")
-        aciklamalar.append("2")
-        aciklamalar.append("3")
+        aciklamalar.append("konak güzeldir")
+        aciklamalar.append("alsancak güzeldir")
+        aciklamalar.append("kemeralti güzeldir")
+        aciklamalar.append("ayasofya güzeldir")
+        aciklamalar.append("sultanahmet güzeldir")
+        aciklamalar.append("topkapı güzeldir")
         
-        fotolar.append(UIImage(named: "cat.png")!)
-        fotolar.append(UIImage(named: "cat.png")!)
-        fotolar.append(UIImage(named: "cat.png")!)
+        
+        fotolar.append(UIImage(named: "konak.jpg")!)
+        fotolar.append(UIImage(named: "alsancak.jpg")!)
+         fotolar.append(UIImage(named: "kemeralti.jpg")!)
+
+        
+        
+        fotolar.append(UIImage(named: "ayasofya.jpg")!)
+        fotolar.append(UIImage(named: "sultanahmet.jpg")!)
+        fotolar.append(UIImage(named: "topkapi.jpg")!)
         
         
         

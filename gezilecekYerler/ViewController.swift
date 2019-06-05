@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var istanbulGezilecekYerler = [String]()
     var AnkaraGezilecekYerler = [String]()
     var gezilecekYerler = [String]()
+    var ilkSayfaSecilenSehir = ""
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             let destinationVC = segue.destination as! GezilecekYerlerViewController
             
             destinationVC.SegGezilecekYerler=gezilecekYerler
+            destinationVC.seciliSehir=ilkSayfaSecilenSehir
             
         }
         
@@ -47,12 +49,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.item == 0 {
-            
+            ilkSayfaSecilenSehir="izmir"
             gezilecekYerler = izmirGezilecekYerler
             
         }
         if indexPath.item == 1 {
-            
+            ilkSayfaSecilenSehir="istanbul"
             gezilecekYerler = istanbulGezilecekYerler
             
         }
@@ -75,8 +77,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         izmirGezilecekYerler.append("alsancak")
         izmirGezilecekYerler.append("kemeraltı")
         
-        istanbulGezilecekYerler.append("1")
-         istanbulGezilecekYerler.append("2")
+        istanbulGezilecekYerler.append("Ayasofya Müzesi")
+        istanbulGezilecekYerler.append("Sultan Ahmet Camii")
+        istanbulGezilecekYerler.append("Topkapi")
         
         // Do any additional setup after loading the view.
     }
