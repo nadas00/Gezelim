@@ -12,18 +12,28 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     
     
     var SegGezilecekYerler = [String]()
+    var fotolar = [UIImage]()
+    var aciklamalar = [String]()
+    
+
     var seciliGezilecekYer = ""
+    var seciliResim = UIImage()
+    var seciliAciklama = ""
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        let tanitimVC = segue.destination as! tanitimViewController
         
         tanitimVC.baslik1 = seciliGezilecekYer
+        tanitimVC.resim1 = seciliResim
+        tanitimVC.aciklama1 = seciliAciklama
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         seciliGezilecekYer = SegGezilecekYerler[indexPath.row]
+        seciliAciklama = aciklamalar[indexPath.row]
+        seciliResim = fotolar[indexPath.row]
     
        performSegue(withIdentifier: "tanitimBaglantisi", sender: nil)
         
@@ -51,6 +61,15 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
 
         gezilecekYerlerTableView.dataSource=self
         gezilecekYerlerTableView.delegate=self
+        
+        aciklamalar.append("1")
+        aciklamalar.append("2")
+        aciklamalar.append("3")
+        
+        fotolar.append(UIImage(named: "cat.png")!)
+        fotolar.append(UIImage(named: "cat.png")!)
+        fotolar.append(UIImage(named: "cat.png")!)
+        
         
         
     }
