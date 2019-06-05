@@ -10,15 +10,27 @@ import UIKit
 
 class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    var SegGezilecekYerler = [String]()
+    var seciliGezilecekYer = ""
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       let tanitimVC = segue.destination as! tanitimViewController
+        
+        tanitimVC.baslik1 = seciliGezilecekYer
+        
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        seciliGezilecekYer = SegGezilecekYerler[indexPath.row]
     
        performSegue(withIdentifier: "tanitimBaglantisi", sender: nil)
+        
         
     }
    
  
-    var SegGezilecekYerler = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SegGezilecekYerler.count

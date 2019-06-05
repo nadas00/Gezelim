@@ -14,6 +14,8 @@ class tanitimViewController: UIViewController {
     @IBOutlet weak var baslik: UILabel!
     @IBOutlet weak var aciklama: UITextView!
     
+    
+    var GezilecekYerBasliklari = [String]()
     var resim1 = UIImage()
     var baslik1=""
     var aciklama1=""
