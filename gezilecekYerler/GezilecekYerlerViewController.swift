@@ -40,6 +40,8 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     var seciliResim = UIImage()
     var seciliAciklama = ""
     var seciliSehir=""
+    var searchGezilecekYerler = [String]()
+    var searching = false
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        let tanitimVC = segue.destination as! tanitimViewController
@@ -80,12 +82,18 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searching{
+            return searchGezilecekYerler.count
+        }else{
         return SegGezilecekYerler.count
-    }
+}    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text=SegGezilecekYerler[indexPath.row]
+        if searching{
+            cell.textLabel?.text=searchGezilecekYerler[indexPath.row]
+        }else{
+        cell.textLabel?.text=SegGezilecekYerler[indexPath.row]}
         return cell
     }
     
@@ -132,4 +140,14 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
 
 
 
+}
+
+extension GezilecekYerlerViewController : UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchGezilecekYerler = SegGezilecekYerler.filter({$0.prefix(searchText.count)==searchText})
+        searching=true
+        gezilecekYerlerTableView.reloadData()
+       
+    }
 }

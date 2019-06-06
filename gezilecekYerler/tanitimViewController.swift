@@ -35,6 +35,8 @@ class tanitimViewController: UIViewController {
     @IBOutlet weak var aciklama: UITextView!
     
     
+    
+    
     var GezilecekYerBasliklari = [String]()
     var resim1 = UIImage()
     var baslik1=""
@@ -44,9 +46,10 @@ class tanitimViewController: UIViewController {
         super.viewDidLoad()
           addNavBarImage()
 
-       resim.image=resim1
+        resim.image=resim1
         baslik.text=baslik1
         aciklama.text=aciklama1
+        aciklama.isEditable=false
     }
     
 
