@@ -9,6 +9,9 @@
 import UIKit
 
 class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        gezilecekYerlerSearchBar.endEditing(true)
+    }
     
     func addNavBarImage() {
         
@@ -99,6 +102,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     
 
     @IBOutlet weak var gezilecekYerlerTableView: UITableView!
+    @IBOutlet weak var gezilecekYerlerSearchBar: UISearchBar!
     
     
     override func viewDidLoad() {

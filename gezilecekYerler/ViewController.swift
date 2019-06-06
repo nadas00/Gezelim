@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+    }
     
+
     func addNavBarImage() {
         
         let navController = navigationController!
@@ -79,6 +83,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         
     }
+    
+ 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
