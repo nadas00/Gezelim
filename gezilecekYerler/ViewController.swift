@@ -36,19 +36,33 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var AnkaraGezilecekYerler = [String]()
     var gezilecekYerler = [String]()
     var ilkSayfaSecilenSehir = ""
+    var searchSehir = [String]()
+    var searching = false
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sehirler.count
+        if searching{
+            return searchSehir.count
+        }else{
+             return sehirler.count
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text=sehirler[indexPath.row]
+        if searching{
+            cell.textLabel?.text = searchSehir[indexPath.row]
+        }
+        else{
+            cell.textLabel?.text=sehirler[indexPath.row]
+        }
+        
         return cell
     }
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -129,5 +143,18 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
 
 
+
+    
 }
+
+
+extension ViewController : UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchSehir = sehirler.filter({$0.prefix(searchText.count)==searchText})
+        searching=true
+        tableView.reloadData()
+    }
+}
+
 

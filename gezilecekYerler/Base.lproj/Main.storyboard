@@ -18,31 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Ve-5g-fIi">
-                                <rect key="frame" x="20" y="81" width="374" height="491"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Ve-5g-fIi">
+                                <rect key="frame" x="20" y="134" width="374" height="438"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="UcG-RE-89n">
-                                <rect key="frame" x="20" y="580" width="374" height="107"/>
+                                <rect key="frame" x="20" y="596" width="374" height="91"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="L8x-Im-w1T"/>
+                                    <constraint firstAttribute="height" constant="91" id="p3k-Mu-URe"/>
                                 </constraints>
                             </imageView>
+                            <searchBar contentMode="redraw" placeholder="Şehir ara..." translatesAutoresizingMaskIntoConstraints="NO" id="jFC-Is-BBW">
+                                <rect key="frame" x="20" y="77" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gRo-id-dXo"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cCc-sJ-oZC"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UcG-RE-89n" secondAttribute="bottom" constant="5" id="2Ee-hZ-e0p"/>
-                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9ad-Ts-lo4"/>
-                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="HX9-aI-Lwt"/>
-                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="leading" secondItem="UcG-RE-89n" secondAttribute="leading" id="Rd0-Sf-BoJ"/>
-                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="YdU-Q0-XmC"/>
-                            <constraint firstItem="UcG-RE-89n" firstAttribute="top" secondItem="4Ve-5g-fIi" secondAttribute="bottom" constant="8" symbolic="YES" id="fC8-2c-r8s"/>
-                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="trailing" secondItem="UcG-RE-89n" secondAttribute="trailing" id="g2d-in-VWp"/>
+                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="leading" secondItem="UcG-RE-89n" secondAttribute="leading" id="82z-dF-tmj"/>
+                            <constraint firstItem="jFC-Is-BBW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DF1-d4-kZw"/>
+                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="top" secondItem="jFC-Is-BBW" secondAttribute="bottom" constant="13" id="Jst-xS-N2V"/>
+                            <constraint firstItem="UcG-RE-89n" firstAttribute="top" secondItem="4Ve-5g-fIi" secondAttribute="bottom" constant="24" id="M0p-y9-rNp"/>
+                            <constraint firstItem="jFC-Is-BBW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="XUr-lE-f9l"/>
+                            <constraint firstItem="jFC-Is-BBW" firstAttribute="leading" secondItem="4Ve-5g-fIi" secondAttribute="leading" id="jN6-rr-qIM"/>
+                            <constraint firstItem="jFC-Is-BBW" firstAttribute="trailing" secondItem="4Ve-5g-fIi" secondAttribute="trailing" id="meU-N8-gBj"/>
+                            <constraint firstItem="jFC-Is-BBW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="msx-xH-HV3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UcG-RE-89n" secondAttribute="bottom" constant="5" id="myN-pg-p8s"/>
+                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="trailing" secondItem="UcG-RE-89n" secondAttribute="trailing" id="xkt-qQ-8ju"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="NGg-16-l1i"/>
                     <connections>
+                        <outlet property="searchBar" destination="jFC-Is-BBW" id="mot-Qd-obI"/>
                         <outlet property="tableView" destination="4Ve-5g-fIi" id="BcX-Cs-PKg"/>
                         <segue destination="I99-NJ-v6h" kind="show" identifier="gezilecekBağlantısı" id="Ojv-hl-I7Q"/>
                     </connections>
@@ -59,25 +74,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-Lm-P2R">
-                                <rect key="frame" x="20" y="81" width="374" height="491"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-Lm-P2R">
+                                <rect key="frame" x="20" y="134" width="374" height="438"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="477" id="rz4-GV-b5n"/>
-                                </constraints>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bottomBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="vnM-ZG-GrD">
-                                <rect key="frame" x="20" y="580" width="374" height="107"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="vnM-ZG-GrD">
+                                <rect key="frame" x="20" y="596" width="374" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="GwR-kk-1Mp"/>
+                                </constraints>
                             </imageView>
+                            <searchBar contentMode="redraw" placeholder="Gezilecek yer ara..." translatesAutoresizingMaskIntoConstraints="NO" id="JUo-rd-siP">
+                                <rect key="frame" x="20" y="77" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Izp-ky-dju"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="I99-NJ-v6h" id="IEs-5u-Rvo"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EoU-Lm-P2R" firstAttribute="leading" secondItem="whc-HG-bpJ" secondAttribute="leadingMargin" id="9mY-NE-lc3"/>
-                            <constraint firstItem="EoU-Lm-P2R" firstAttribute="top" secondItem="aUU-Sh-uLk" secondAttribute="top" constant="31" id="JLM-sw-wgv"/>
-                            <constraint firstItem="EoU-Lm-P2R" firstAttribute="leading" secondItem="vnM-ZG-GrD" secondAttribute="leading" id="gBe-sw-A7N"/>
-                            <constraint firstItem="EoU-Lm-P2R" firstAttribute="trailing" secondItem="vnM-ZG-GrD" secondAttribute="trailing" id="hgr-gJ-0QX"/>
-                            <constraint firstItem="vnM-ZG-GrD" firstAttribute="top" secondItem="EoU-Lm-P2R" secondAttribute="bottom" constant="8" symbolic="YES" id="iei-Qh-8Tm"/>
-                            <constraint firstItem="EoU-Lm-P2R" firstAttribute="trailing" secondItem="whc-HG-bpJ" secondAttribute="trailingMargin" id="lbp-Ya-h0q"/>
+                            <constraint firstItem="JUo-rd-siP" firstAttribute="leading" secondItem="whc-HG-bpJ" secondAttribute="leadingMargin" id="5kn-IT-7jY"/>
+                            <constraint firstItem="EoU-Lm-P2R" firstAttribute="trailing" secondItem="vnM-ZG-GrD" secondAttribute="trailing" id="EbP-ut-Xte"/>
+                            <constraint firstItem="aUU-Sh-uLk" firstAttribute="bottom" secondItem="vnM-ZG-GrD" secondAttribute="bottom" constant="5" id="Nby-T9-1JX"/>
+                            <constraint firstItem="JUo-rd-siP" firstAttribute="trailing" secondItem="EoU-Lm-P2R" secondAttribute="trailing" id="RAB-0R-gFs"/>
+                            <constraint firstItem="JUo-rd-siP" firstAttribute="trailing" secondItem="whc-HG-bpJ" secondAttribute="trailingMargin" id="Vu5-GB-ZCZ"/>
+                            <constraint firstItem="JUo-rd-siP" firstAttribute="leading" secondItem="EoU-Lm-P2R" secondAttribute="leading" id="c4I-Co-yJk"/>
+                            <constraint firstItem="JUo-rd-siP" firstAttribute="top" secondItem="aUU-Sh-uLk" secondAttribute="top" constant="13" id="nrT-9N-fvq"/>
+                            <constraint firstItem="EoU-Lm-P2R" firstAttribute="top" secondItem="JUo-rd-siP" secondAttribute="bottom" constant="13" id="pQm-ae-SOi"/>
+                            <constraint firstItem="vnM-ZG-GrD" firstAttribute="top" secondItem="EoU-Lm-P2R" secondAttribute="bottom" constant="24" id="u5G-NA-aV5"/>
+                            <constraint firstItem="EoU-Lm-P2R" firstAttribute="leading" secondItem="vnM-ZG-GrD" secondAttribute="leading" id="vg9-fz-iCj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUU-Sh-uLk"/>
                     </view>
