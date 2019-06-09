@@ -18,6 +18,10 @@
 		3D5E403D22A58AED0005CAA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5E403C22A58AED0005CAA6 /* Assets.xcassets */; };
 		3D5E404022A58AED0005CAA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5E403E22A58AED0005CAA6 /* LaunchScreen.storyboard */; };
 		3D5E404822A58E4F0005CAA6 /* GezilecekYerlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E404722A58E4F0005CAA6 /* GezilecekYerlerViewController.swift */; };
+		3DA045D422AC89D500BC2E7F /* VCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA045D322AC89D500BC2E7F /* VCTableViewCell.swift */; };
+		3DA045D622AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA045D522AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png */; };
+		3DA045D822AC8F8000BC2E7F /* ist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DA045D722AC8F8000BC2E7F /* ist.jpg */; };
+		3DA045DA22AC8FA800BC2E7F /* ank.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DA045D922AC8FA800BC2E7F /* ank.jpg */; };
 		3DBF546422A7F90300C3E4C3 /* ayasofya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546322A7F90300C3E4C3 /* ayasofya.jpg */; };
 		3DBF546622A7F93F00C3E4C3 /* sultanahmet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546522A7F93F00C3E4C3 /* sultanahmet.jpg */; };
 		3DBF546822A7F97F00C3E4C3 /* topkapi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546722A7F97F00C3E4C3 /* topkapi.jpg */; };
@@ -41,6 +45,10 @@
 		3D5E403F22A58AED0005CAA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D5E404122A58AED0005CAA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5E404722A58E4F0005CAA6 /* GezilecekYerlerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GezilecekYerlerViewController.swift; sourceTree = "<group>"; };
+		3DA045D322AC89D500BC2E7F /* VCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTableViewCell.swift; sourceTree = "<group>"; };
+		3DA045D522AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "izmir-buyuksehir-belediyesi-vector-logo-small.png"; sourceTree = "<group>"; };
+		3DA045D722AC8F8000BC2E7F /* ist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ist.jpg; sourceTree = "<group>"; };
+		3DA045D922AC8FA800BC2E7F /* ank.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ank.jpg; sourceTree = "<group>"; };
 		3DBF546322A7F90300C3E4C3 /* ayasofya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ayasofya.jpg; sourceTree = "<group>"; };
 		3DBF546522A7F93F00C3E4C3 /* sultanahmet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultanahmet.jpg; sourceTree = "<group>"; };
 		3DBF546722A7F97F00C3E4C3 /* topkapi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = topkapi.jpg; sourceTree = "<group>"; };
@@ -107,6 +115,10 @@
 				3D2FCD2922A854B900ACA7C3 /* izmirGezilecekYerler.txt */,
 				3D5E404122A58AED0005CAA6 /* Info.plist */,
 				3D2FCD2B22A8566E00ACA7C3 /* aciklamalar.txt */,
+				3DA045D322AC89D500BC2E7F /* VCTableViewCell.swift */,
+				3DA045D522AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png */,
+				3DA045D722AC8F8000BC2E7F /* ist.jpg */,
+				3DA045D922AC8FA800BC2E7F /* ank.jpg */,
 			);
 			path = gezilecekYerler;
 			sourceTree = "<group>";
@@ -175,11 +187,14 @@
 				3DBF546622A7F93F00C3E4C3 /* sultanahmet.jpg in Resources */,
 				3DBF546422A7F90300C3E4C3 /* ayasofya.jpg in Resources */,
 				3DBF547022A7FF0500C3E4C3 /* kemeralti.jpg in Resources */,
+				3DA045D622AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png in Resources */,
+				3DA045DA22AC8FA800BC2E7F /* ank.jpg in Resources */,
 				3D5E404022A58AED0005CAA6 /* LaunchScreen.storyboard in Resources */,
 				3D2FCD3422A8610D00ACA7C3 /* topBanner.png in Resources */,
 				3DBF546A22A7FA4300C3E4C3 /* alsancak.jpg in Resources */,
 				3D2FCD3622A8632C00ACA7C3 /* bottomBanner.png in Resources */,
 				3DBF546822A7F97F00C3E4C3 /* topkapi.jpg in Resources */,
+				3DA045D822AC8F8000BC2E7F /* ist.jpg in Resources */,
 				3D5E403D22A58AED0005CAA6 /* Assets.xcassets in Resources */,
 				3D5E403B22A58AEB0005CAA6 /* Main.storyboard in Resources */,
 				3D2FCD2A22A854B900ACA7C3 /* izmirGezilecekYerler.txt in Resources */,
@@ -195,6 +210,7 @@
 			files = (
 				3D5E404822A58E4F0005CAA6 /* GezilecekYerlerViewController.swift in Sources */,
 				3D5E403822A58AEB0005CAA6 /* ViewController.swift in Sources */,
+				3DA045D422AC89D500BC2E7F /* VCTableViewCell.swift in Sources */,
 				3D5E403622A58AEB0005CAA6 /* AppDelegate.swift in Sources */,
 				3DE6B73A22A5ECE500ED1807 /* tanitimViewController.swift in Sources */,
 			);

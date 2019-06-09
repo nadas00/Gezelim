@@ -42,6 +42,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var ilkSayfaSecilenSehir = ""
     var searchSehir = [String]()
     var searching = false
+    var sehirLogoları = [UIImage]()
+    
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,12 +57,16 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VCTableViewCell
         if searching{
-            cell.textLabel?.text = searchSehir[indexPath.row]
-        }
+            cell.labelCell.text = searchSehir[indexPath.row]
+            
+           
+            }
+        
         else{
-            cell.textLabel?.text=sehirler[indexPath.row]
+            cell.labelCell.text=sehirler[indexPath.row]
+           
         }
         
         return cell
@@ -104,6 +111,10 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     
     override func viewDidLoad() {
+        
+        sehirLogoları.append(UIImage(named: "izmir-buyuksehir-belediyesi-vector-logo-small")!)
+        sehirLogoları.append(UIImage(named: "ist.jpg")!)
+        sehirLogoları.append(UIImage(named: "ank.jpg")!)
         
         super.viewDidLoad()
          addNavBarImage()
