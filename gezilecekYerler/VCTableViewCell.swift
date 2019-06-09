@@ -12,15 +12,31 @@ class VCTableViewCell: UITableViewCell {
     @IBOutlet weak var labelCell: UILabel!
     
     @IBOutlet weak var ImageCell: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        hide()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func animate() {
+        
+        UIView.beginAnimations("", context: nil)
+        
+        UIView.setAnimationDuration(0.5)
+        layer.transform = CATransform3DIdentity
+        alpha = 1
+        
+        UIView.commitAnimations()
+        
+    }
+    
+    func hide() {
+        
+        alpha = 0
+        
+        layer.transform = CATransform3DMakeRotation((90.0 * .pi) / 180, 0.3, 0, 0.1)
+        layer.anchorPoint = CGPoint(x: 0, y: 0.5)
     }
 
 }

@@ -13,6 +13,13 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.endEditing(true)
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard let cell = cell as? VCTableViewCell else { return }
+        
+        cell.animate()
+        
+    }
     
 
     func addNavBarImage() {
