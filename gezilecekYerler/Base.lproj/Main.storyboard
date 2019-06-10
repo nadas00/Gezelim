@@ -19,28 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Ve-5g-fIi">
-                                <rect key="frame" x="20" y="140" width="374" height="453"/>
+                                <rect key="frame" x="20" y="130" width="374" height="463"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="101" id="HVa-SM-anU" customClass="VCTableViewCell" customModule="gezilecekYerler" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="101"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="92" id="HVa-SM-anU" customClass="VCTableViewCell" customModule="gezilecekYerler" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HVa-SM-anU" id="ErP-ZB-O9d">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="100.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="91.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drG-kP-hev">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="91.666666666666671"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="4tF-9x-eUc">
-                                                            <rect key="frame" x="8" y="9" width="96" height="75"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-O8-mgt">
-                                                            <rect key="frame" x="132" y="26" width="234" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-O8-mgt">
+                                                            <rect key="frame" x="22" y="19" width="216" height="55"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="234" id="Kqb-YJ-7Wy"/>
-                                                                <constraint firstAttribute="height" constant="56" id="isk-Rk-GpB"/>
+                                                                <constraint firstAttribute="width" constant="216" id="HBd-U7-NRr"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,22 +44,26 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.87958404680365287" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="N7Z-O8-mgt" secondAttribute="trailing" constant="8" id="NeJ-y8-Yhk"/>
-                                                        <constraint firstAttribute="bottom" secondItem="N7Z-O8-mgt" secondAttribute="bottom" constant="34" id="Nrd-U6-ipw"/>
-                                                        <constraint firstItem="N7Z-O8-mgt" firstAttribute="top" secondItem="drG-kP-hev" secondAttribute="top" constant="26" id="gqC-hH-Fe7"/>
+                                                        <constraint firstItem="N7Z-O8-mgt" firstAttribute="top" secondItem="drG-kP-hev" secondAttribute="top" constant="19" id="4CT-dZ-7ab"/>
+                                                        <constraint firstItem="N7Z-O8-mgt" firstAttribute="centerY" secondItem="drG-kP-hev" secondAttribute="centerY" id="BWR-Wk-8Rm"/>
+                                                        <constraint firstItem="N7Z-O8-mgt" firstAttribute="leading" secondItem="drG-kP-hev" secondAttribute="leading" constant="22" id="Twd-wC-EKS"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <rect key="contentStretch" x="0.65000000000000002" y="0.65000000000000002" width="0.90000000000000002" height="0.80000000000000004"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="drG-kP-hev" secondAttribute="trailing" id="A8w-UA-sJ7"/>
-                                                <constraint firstItem="drG-kP-hev" firstAttribute="top" secondItem="ErP-ZB-O9d" secondAttribute="top" id="XkC-yB-Znx"/>
-                                                <constraint firstAttribute="bottom" secondItem="drG-kP-hev" secondAttribute="bottom" constant="10.666666666666671" id="bB7-dH-l4x"/>
-                                                <constraint firstItem="drG-kP-hev" firstAttribute="leading" secondItem="ErP-ZB-O9d" secondAttribute="leading" id="cO8-Mv-B2F"/>
+                                                <constraint firstAttribute="bottom" secondItem="drG-kP-hev" secondAttribute="bottom" id="5ar-pw-n3e"/>
+                                                <constraint firstItem="drG-kP-hev" firstAttribute="leading" secondItem="ErP-ZB-O9d" secondAttribute="leading" constant="20" id="IlR-SF-NhY"/>
+                                                <constraint firstAttribute="trailing" secondItem="drG-kP-hev" secondAttribute="trailing" constant="20" id="J7z-Dm-Wzi"/>
+                                                <constraint firstItem="drG-kP-hev" firstAttribute="top" secondItem="ErP-ZB-O9d" secondAttribute="top" id="MJP-Ee-bQk"/>
+                                                <constraint firstAttribute="trailing" secondItem="drG-kP-hev" secondAttribute="trailing" constant="20" id="Z34-Ra-fOJ"/>
+                                                <constraint firstItem="drG-kP-hev" firstAttribute="leading" secondItem="ErP-ZB-O9d" secondAttribute="leading" constant="20" id="wLS-sL-rKz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="ImageCell" destination="4tF-9x-eUc" id="FCb-io-Hwy"/>
+                                            <outlet property="cardView" destination="drG-kP-hev" id="6rR-ak-eTh"/>
                                             <outlet property="labelCell" destination="N7Z-O8-mgt" id="efy-HE-ZbA"/>
                                         </connections>
                                     </tableViewCell>
@@ -76,7 +75,7 @@
                                     <constraint firstAttribute="height" constant="91" id="oSL-R1-lai"/>
                                 </constraints>
                             </imageView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Şehir ara..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFC-Is-BBW">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Şehir ara..." translatesAutoresizingMaskIntoConstraints="NO" id="jFC-Is-BBW">
                                 <rect key="frame" x="20" y="74" width="374" height="56"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -99,7 +98,7 @@
                             <constraint firstItem="UcG-RE-89n" firstAttribute="top" secondItem="4Ve-5g-fIi" secondAttribute="bottom" constant="8" symbolic="YES" id="abl-3U-LWm"/>
                             <constraint firstItem="jFC-Is-BBW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cUh-nZ-H7H"/>
                             <constraint firstItem="jFC-Is-BBW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="evN-kF-V6R"/>
-                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="top" secondItem="jFC-Is-BBW" secondAttribute="bottom" constant="10" id="lij-5N-d8E"/>
+                            <constraint firstItem="4Ve-5g-fIi" firstAttribute="top" secondItem="jFC-Is-BBW" secondAttribute="bottom" id="lij-5N-d8E"/>
                             <constraint firstItem="jFC-Is-BBW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oem-sL-z1F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -244,6 +243,5 @@
     </scenes>
     <resources>
         <image name="bottomBanner.png" width="3465" height="1148"/>
-        <image name="topBanner.png" width="2713" height="1172"/>
     </resources>
 </document>

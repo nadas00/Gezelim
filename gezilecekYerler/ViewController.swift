@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         searchBar.endEditing(true)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+       
         
         guard let cell = cell as? VCTableViewCell else { return }
         
@@ -64,6 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VCTableViewCell
         if searching{
             cell.labelCell.text = searchSehir[indexPath.row]
@@ -75,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             cell.labelCell.text=sehirler[indexPath.row]
            
         }
-        
+     
         return cell
     }
     
@@ -118,6 +120,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     
     override func viewDidLoad() {
+        
+        //satır aralığı çizgilerini siler
+   self.tableView.separatorColor = UIColor.clear
         
         sehirLogoları.append(UIImage(named: "izmir-buyuksehir-belediyesi-vector-logo-small")!)
         sehirLogoları.append(UIImage(named: "ist.jpg")!)
