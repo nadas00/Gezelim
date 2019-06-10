@@ -14,7 +14,7 @@ class VCTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+        layer.backgroundColor = UIColor.clear.cgColor
         hide()
     }
     
@@ -41,7 +41,7 @@ class VCTableViewCell: UITableViewCell {
         
         UIView.beginAnimations("", context: nil)
         
-        UIView.setAnimationDuration(0.5)
+        UIView.setAnimationDuration(0.4)
         layer.transform = CATransform3DIdentity
         alpha = 1
         
@@ -53,8 +53,12 @@ class VCTableViewCell: UITableViewCell {
         
         alpha = 0
         
-        layer.transform = CATransform3DMakeRotation((90.0 * .pi) / 180, 0.3, 0, 0.1)
+      layer.transform = CATransform3DMakeRotation((90 * .pi) / 30 , 1, 0, 0)
         layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+ 
+        
+        //  layer.transform = CATransform3DMakeRotation((90 * .pi) / 30, 1, 0, 0) layer.anchorPoint = CGPoint(x: 0, y: 0.5) : takla
+        
     }
 
 }
