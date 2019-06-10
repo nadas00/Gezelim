@@ -22,6 +22,9 @@
 		3DA045D622AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA045D522AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png */; };
 		3DA045D822AC8F8000BC2E7F /* ist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DA045D722AC8F8000BC2E7F /* ist.jpg */; };
 		3DA045DA22AC8FA800BC2E7F /* ank.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DA045D922AC8FA800BC2E7F /* ank.jpg */; };
+		3DBEAB5522AEE0430092BE1A /* swipeFav.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DBEAB5422AEE0420092BE1A /* swipeFav.png */; };
+		3DBEAB5722AF05230092BE1A /* crop-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DBEAB5622AF05220092BE1A /* crop-circle.png */; };
+		3DBEAB5B22AF0DC80092BE1A /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DBEAB5A22AF0DC70092BE1A /* arrow.png */; };
 		3DBF546422A7F90300C3E4C3 /* ayasofya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546322A7F90300C3E4C3 /* ayasofya.jpg */; };
 		3DBF546622A7F93F00C3E4C3 /* sultanahmet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546522A7F93F00C3E4C3 /* sultanahmet.jpg */; };
 		3DBF546822A7F97F00C3E4C3 /* topkapi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546722A7F97F00C3E4C3 /* topkapi.jpg */; };
@@ -49,6 +52,9 @@
 		3DA045D522AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "izmir-buyuksehir-belediyesi-vector-logo-small.png"; sourceTree = "<group>"; };
 		3DA045D722AC8F8000BC2E7F /* ist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ist.jpg; sourceTree = "<group>"; };
 		3DA045D922AC8FA800BC2E7F /* ank.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ank.jpg; sourceTree = "<group>"; };
+		3DBEAB5422AEE0420092BE1A /* swipeFav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipeFav.png; sourceTree = "<group>"; };
+		3DBEAB5622AF05220092BE1A /* crop-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-circle.png"; sourceTree = "<group>"; };
+		3DBEAB5A22AF0DC70092BE1A /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		3DBF546322A7F90300C3E4C3 /* ayasofya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ayasofya.jpg; sourceTree = "<group>"; };
 		3DBF546522A7F93F00C3E4C3 /* sultanahmet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultanahmet.jpg; sourceTree = "<group>"; };
 		3DBF546722A7F97F00C3E4C3 /* topkapi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = topkapi.jpg; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 				3D2FCD3322A8610D00ACA7C3 /* topBanner.png */,
 				3D5E403922A58AEB0005CAA6 /* Main.storyboard */,
 				3D5E403C22A58AED0005CAA6 /* Assets.xcassets */,
+				3DBEAB5422AEE0420092BE1A /* swipeFav.png */,
 				3D5E403E22A58AED0005CAA6 /* LaunchScreen.storyboard */,
 				3D5E404722A58E4F0005CAA6 /* GezilecekYerlerViewController.swift */,
 				3DE6B73922A5ECE500ED1807 /* tanitimViewController.swift */,
@@ -116,9 +123,11 @@
 				3D5E404122A58AED0005CAA6 /* Info.plist */,
 				3D2FCD2B22A8566E00ACA7C3 /* aciklamalar.txt */,
 				3DA045D322AC89D500BC2E7F /* VCTableViewCell.swift */,
+				3DBEAB5622AF05220092BE1A /* crop-circle.png */,
 				3DA045D522AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png */,
 				3DA045D722AC8F8000BC2E7F /* ist.jpg */,
 				3DA045D922AC8FA800BC2E7F /* ank.jpg */,
+				3DBEAB5A22AF0DC70092BE1A /* arrow.png */,
 			);
 			path = gezilecekYerler;
 			sourceTree = "<group>";
@@ -182,7 +191,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D2FCD2822A8542B00ACA7C3 /* sehirler.txt in Resources */,
+				3DBEAB5B22AF0DC80092BE1A /* arrow.png in Resources */,
 				3DBF546E22A7FA8700C3E4C3 /* konak.jpg in Resources */,
+				3DBEAB5522AEE0430092BE1A /* swipeFav.png in Resources */,
 				3D2FCD2C22A8566E00ACA7C3 /* aciklamalar.txt in Resources */,
 				3DBF546622A7F93F00C3E4C3 /* sultanahmet.jpg in Resources */,
 				3DBF546422A7F90300C3E4C3 /* ayasofya.jpg in Resources */,
@@ -198,6 +209,7 @@
 				3D5E403D22A58AED0005CAA6 /* Assets.xcassets in Resources */,
 				3D5E403B22A58AEB0005CAA6 /* Main.storyboard in Resources */,
 				3D2FCD2A22A854B900ACA7C3 /* izmirGezilecekYerler.txt in Resources */,
+				3DBEAB5722AF05230092BE1A /* crop-circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

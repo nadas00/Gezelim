@@ -10,8 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
+    
+ 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.endEditing(true)
+
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
        
@@ -21,8 +24,26 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         cell.animate()
         
     }
-    
-
+    //soldan sağa okunan diller için sağda bulunan kaydırma konfigrasyonu //tr :Sol
+    /*
+     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let favorites = UIContextualAction(style: .normal, title: "Favorilere Ekle") { (action, view, nil) in
+            print("favorilere eklendi")
+           
+        }
+        return UISwipeActionsConfiguration(actions: [favorites])
+    }
+ */
+    //soldan sağa okunan diller için solda bulunan kaydırma konfigrasyonu //tr :Sağ
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deneme = UIContextualAction(style: .normal, title: "DENEME") { (action, view, nil) in
+            print("deneme")
+        }
+        deneme.image = #imageLiteral(resourceName: "swipeFav")
+        deneme.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+         return UISwipeActionsConfiguration(actions: [deneme])
+    }
     func addNavBarImage() {
         
         let navController = navigationController!
@@ -64,9 +85,15 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
        
     }
     
+
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VCTableViewCell
+    
+        
+      
+        
         if searching{
             cell.labelCell.text = searchSehir[indexPath.row]
             
@@ -77,7 +104,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             cell.labelCell.text=sehirler[indexPath.row]
            
         }
-     
+        
+
         return cell
     }
     
@@ -120,6 +148,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     
     override func viewDidLoad() {
+        
+        
         
         //satır aralığı çizgilerini siler
    self.tableView.separatorColor = UIColor.clear
