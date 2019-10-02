@@ -1,7 +1,11 @@
 Temmuz 1984 tarihli Resmi Gazete'de yayımlanan 3030 Sayılı Büyükşehir Belediyeleri'nin yönetimi hakkında kanun hükmünde kararnamenin değiştirilerek kabulü hakkında kanun yürürlüğe girmesiyle Konak Belediyesi 1984 yılında Merkez İlçe belediyesi olarak kurulmuştur. 04.07.1987 tarihli Resmi Gazete ‘de yayımlanan 3392 Sayılı 103 İlçe Kurulması Hakkında Kanun ile de Merkez İlçe Belediyesi Konak Belediyesi olarak değiştirilmiştir. Konak Belediyesi Meclis Üyesi sayısı, Başkan hariç 37' dir. Temmuz 1984 tarihli Resmi Gazete'de yayımlanan 3030 Sayılı Büyükşehir Belediyeleri'nin yönetimi hakkında kanun hükmünde kararnamenin değiştirilerek kabulü hakkında kanun yürürlüğe girmesiyle Konak Belediyesi 1984 yılında Merkez İlçe belediyesi olarak kurulmuştur. 04.07.1987 tarihli Resmi Gazete ‘de yayımlanan 3392 Sayılı 103 İlçe Kurulması Hakkında Kanun ile de Merkez İlçe Belediyesi Konak Belediyesi olarak değiştirilmiştir. Konak Belediyesi Meclis Üyesi sayısı, Başkan hariç 37' dir.
 Temmuz 1984 tarihli Resmi Gazete'de yayımlanan 3030 Sayılı Büyükşehir Belediyeleri'nin yönetimi hakkında kanun hükmünde kararnamenin değiştirilerek kabulü hakkında kanun yürürlüğe girmesiyle Konak Belediyesi 1984 yılında Merkez İlçe belediyesi olarak kurulmuştur. 04.07.1987 tarihli Resmi Gazete ‘de yayımlanan 3392 Sayılı 103 İlçe Kurulması Hakkında Kanun ile de Merkez İlçe Belediyesi Konak Belediyesi olarak değiştirilmiştir. Konak Belediyesi Meclis Üyesi sayısı, Başkan hariç 37' dir.
 --
+<<<<<<< HEAD
 alsancak çokkkkk güzeldir6876876
+=======
+alsancak çokkkkk güzeldir
+>>>>>>> cf88b7727a7f16883e80385032226abff5ebc7fa
 --
 kemeralti güzeldir
 --
