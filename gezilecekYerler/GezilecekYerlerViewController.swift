@@ -7,8 +7,47 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    var ref: DatabaseReference!
+    var databaseHandle:DatabaseHandle?
+    var postData = [String]()
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return postData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VCTableViewCell
+    
+        
+      
+       
+   
+            
+        //cell ismi belirler
+        cell.labelCell.text=postData[indexPath.row]
+           
+     
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+       
+        
+        guard let cell = cell as? VCTableViewCell else { return }
+        
+        cell.animate()
+        
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         gezilecekYerlerSearchBar.endEditing(true)
     }
@@ -37,8 +76,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     var SegGezilecekYerler = [String]()
     var fotolar = [UIImage]()
     var aciklamalar = [String]()
-    
-
+    var secilmisSehir = 0
     var seciliGezilecekYer = ""
     var seciliResim = UIImage()
     var seciliAciklama = ""
@@ -56,6 +94,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         
         //konak , alsc vb. ait değerler
         
@@ -80,32 +119,16 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
       
         
         
+  
     
    
- 
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching{
-            return searchGezilecekYerler.count
-        }else{
-        return SegGezilecekYerler.count
-}    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        if searching{
-            cell.textLabel?.text=searchGezilecekYerler[indexPath.row]
-        }else{
-        cell.textLabel?.text=SegGezilecekYerler[indexPath.row]}
-        return cell
-    }
-    
 
     @IBOutlet weak var gezilecekYerlerTableView: UITableView!
     @IBOutlet weak var gezilecekYerlerSearchBar: UISearchBar!
     
     
     override func viewDidLoad() {
+         self.gezilecekYerlerTableView.separatorColor = UIColor.clear
         super.viewDidLoad()
          addNavBarImage()
         do {
@@ -119,6 +142,21 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
             // do something with Error
             print(err)
         }
+        //set firebase reference
+         ref = Database.database().reference()
+         //retrieve post and listen for changes
+        ref?.child(String(secilmisSehir)).child("tripLocations").observe(.childAdded, with: { (snapshot) in
+            
+           
+             //code to execute when a child added under Posts
+            let post = snapshot.childSnapshot(forPath: "locationName").value as? String
+             if let actualPost = post{
+                 self.postData.append(actualPost)
+                print(actualPost)
+                self.gezilecekYerlerTableView.reloadData()
+             }
+         })
+         
 
         gezilecekYerlerTableView.dataSource=self
         gezilecekYerlerTableView.delegate=self

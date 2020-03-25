@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
@@ -63,12 +65,27 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         navigationItem.titleView = imageView
     }
     
-       var sehirler = [String]()
+    
+
+    var ref: DatabaseReference!
+    var databaseHandle:DatabaseHandle?
+    var postData = [String]()
+
+    
+    //job1: sehir isimlerini firebaseten çekip tableview'a gönder.
+    //sehir isimleri
+    var sehirler = [String]()
+    
+    
+    
+    
+    
+    
     var izmirGezilecekYerler = [String]()
     var istanbulGezilecekYerler = [String]()
     var AnkaraGezilecekYerler = [String]()
     var gezilecekYerler = [String]()
-    var ilkSayfaSecilenSehir = ""
+    var ilkSayfaSecilenSehir = 0
     var searchSehir = [String]()
     var searching = false
     var sehirLogoları = [UIImage]()
@@ -80,12 +97,14 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         if searching{
             return searchSehir.count
         }else{
-             return sehirler.count
+            return postData.count
         }
        
     }
     
 
+    
+    //table oluşturur
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -101,7 +120,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             }
         
         else{
-            cell.labelCell.text=sehirler[indexPath.row]
+            
+        //cell ismi belirler
+           cell.labelCell.text=postData[indexPath.row]
            
         }
         
@@ -120,8 +141,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             
             let destinationVC = segue.destination as! GezilecekYerlerViewController
             
-            destinationVC.SegGezilecekYerler=gezilecekYerler
-            destinationVC.seciliSehir=ilkSayfaSecilenSehir
+            // işe yaramaz destinationVC.SegGezilecekYerler=gezilecekYerler
+            destinationVC.secilmisSehir = ilkSayfaSecilenSehir
             
         }
         
@@ -132,16 +153,11 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.item == 0 {
-            ilkSayfaSecilenSehir="izmir"
-            gezilecekYerler = izmirGezilecekYerler
+       
+            ilkSayfaSecilenSehir = indexPath.item+1
+           
             
-        }
-        if indexPath.item == 1 {
-            ilkSayfaSecilenSehir="istanbul"
-            gezilecekYerler = istanbulGezilecekYerler
-            
-        }
+  
        
         performSegue(withIdentifier: "gezilecekBağlantısı", sender: nil)
     }
@@ -164,6 +180,22 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         tableView.dataSource=self
         tableView.delegate=self
         
+        //set firebase reference
+        ref = Database.database().reference()
+        //retrieve post and listen for changes
+        ref?.observe(.childAdded, with: { (snapshot) in
+            
+            
+            //code to execute when a child added under Posts
+            let post = snapshot.childSnapshot(forPath: "provinceName").value as? String
+            if let actualPost = post{
+                self.postData.append(actualPost)
+                self.tableView.reloadData()
+            }
+        })
+        
+        
+        
        
         
         izmirGezilecekYerler.append("konak")
@@ -173,18 +205,21 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         istanbulGezilecekYerler.append("Ayasofya Müzesi")
         istanbulGezilecekYerler.append("Sultan Ahmet Camii")
         istanbulGezilecekYerler.append("Topkapi")
+    
         
-        do {
-            // This solution assumes  you've got the file in your bundle
-            if let path = Bundle.main.path(forResource: "sehirler", ofType: "txt"){
-                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
-                sehirler = data.components(separatedBy: ", ")
-                
-            }
-        } catch let err as NSError {
-            // do something with Error
-            print(err)
-        }
+        //sehirleri doldurma işini siliyorum
+        
+//        do {
+//            // This solution assumes  you've got the file in your bundle
+//            if let path = Bundle.main.path(forResource: "sehirler", ofType: "txt"){
+//                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+//                sehirler = data.components(separatedBy: ", ")
+//
+//            }
+//        } catch let err as NSError {
+//            // do something with Error
+//            print(err)
+//        }
         
         do {
             // This solution assumes  you've got the file in your bundle

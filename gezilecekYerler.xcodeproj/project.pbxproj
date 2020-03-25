@@ -32,9 +32,12 @@
 		3DBF546E22A7FA8700C3E4C3 /* konak.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546D22A7FA8700C3E4C3 /* konak.jpg */; };
 		3DBF547022A7FF0500C3E4C3 /* kemeralti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546F22A7FF0500C3E4C3 /* kemeralti.jpg */; };
 		3DE6B73A22A5ECE500ED1807 /* tanitimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE6B73922A5ECE500ED1807 /* tanitimViewController.swift */; };
+		C22743752428FB1F001B3CAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C22743742428FB1F001B3CAD /* GoogleService-Info.plist */; };
+		FD6BC1955640C6901D8F488B /* Pods_gezilecekYerler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242A71FACEFF13522C4FE4C9 /* Pods_gezilecekYerler.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		242A71FACEFF13522C4FE4C9 /* Pods_gezilecekYerler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gezilecekYerler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2FCD2722A8542B00ACA7C3 /* sehirler.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sehirler.txt; sourceTree = "<group>"; };
 		3D2FCD2922A854B900ACA7C3 /* izmirGezilecekYerler.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = izmirGezilecekYerler.txt; sourceTree = "<group>"; };
 		3D2FCD2B22A8566E00ACA7C3 /* aciklamalar.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = aciklamalar.txt; sourceTree = "<group>"; };
@@ -62,6 +65,9 @@
 		3DBF546D22A7FA8700C3E4C3 /* konak.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = konak.jpg; sourceTree = "<group>"; };
 		3DBF546F22A7FF0500C3E4C3 /* kemeralti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kemeralti.jpg; sourceTree = "<group>"; };
 		3DE6B73922A5ECE500ED1807 /* tanitimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tanitimViewController.swift; sourceTree = "<group>"; };
+		9B10132A3BDC3EB694934FFD /* Pods-gezilecekYerler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gezilecekYerler.debug.xcconfig"; path = "Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler.debug.xcconfig"; sourceTree = "<group>"; };
+		B3AE6C63403B07C404344221 /* Pods-gezilecekYerler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gezilecekYerler.release.xcconfig"; path = "Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler.release.xcconfig"; sourceTree = "<group>"; };
+		C22743742428FB1F001B3CAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6BC1955640C6901D8F488B /* Pods_gezilecekYerler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +100,8 @@
 			children = (
 				3D5E403422A58AEB0005CAA6 /* gezilecekYerler */,
 				3D5E403322A58AEB0005CAA6 /* Products */,
+				9AEA6DEA3F5E8FF734094AB1 /* Pods */,
+				4F4D5B1624BCA6BD3738B30D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,8 +137,27 @@
 				3DA045D722AC8F8000BC2E7F /* ist.jpg */,
 				3DA045D922AC8FA800BC2E7F /* ank.jpg */,
 				3DBEAB5A22AF0DC70092BE1A /* arrow.png */,
+				C22743742428FB1F001B3CAD /* GoogleService-Info.plist */,
 			);
 			path = gezilecekYerler;
+			sourceTree = "<group>";
+		};
+		4F4D5B1624BCA6BD3738B30D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				242A71FACEFF13522C4FE4C9 /* Pods_gezilecekYerler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AEA6DEA3F5E8FF734094AB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B10132A3BDC3EB694934FFD /* Pods-gezilecekYerler.debug.xcconfig */,
+				B3AE6C63403B07C404344221 /* Pods-gezilecekYerler.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D5E404422A58AED0005CAA6 /* Build configuration list for PBXNativeTarget "gezilecekYerler" */;
 			buildPhases = (
+				99D47D864CFBCFD9D03AF249 /* [CP] Check Pods Manifest.lock */,
 				3D5E402E22A58AEB0005CAA6 /* Sources */,
 				3D5E402F22A58AEB0005CAA6 /* Frameworks */,
 				3D5E403022A58AEB0005CAA6 /* Resources */,
+				B52BFA3E2A33BD8F4CC8E099 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,10 +240,53 @@
 				3D5E403B22A58AEB0005CAA6 /* Main.storyboard in Resources */,
 				3D2FCD2A22A854B900ACA7C3 /* izmirGezilecekYerler.txt in Resources */,
 				3DBEAB5722AF05230092BE1A /* crop-circle.png in Resources */,
+				C22743752428FB1F001B3CAD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99D47D864CFBCFD9D03AF249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gezilecekYerler-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B52BFA3E2A33BD8F4CC8E099 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D5E402E22A58AEB0005CAA6 /* Sources */ = {
@@ -368,6 +441,7 @@
 		};
 		3D5E404522A58AED0005CAA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B10132A3BDC3EB694934FFD /* Pods-gezilecekYerler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -386,6 +460,7 @@
 		};
 		3D5E404622A58AED0005CAA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3AE6C63403B07C404344221 /* Pods-gezilecekYerler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_gezilecekYerler {
+  umbrella header "Pods-gezilecekYerler-umbrella.h"
+
+  export *
+  module * { export * }
+}
