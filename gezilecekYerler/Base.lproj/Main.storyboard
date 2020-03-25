@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JSo-n7-0JC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JSo-n7-0JC">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Eu-WD-b5J">
-                                                            <rect key="frame" x="383" y="44" width="23" height="16"/>
+                                                            <rect key="frame" x="382" y="44" width="23" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -145,7 +145,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oes-Ye-qTc">
-                                                            <rect key="frame" x="343" y="43" width="23" height="17"/>
+                                                            <rect key="frame" x="342" y="43" width="23" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -244,44 +244,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="25m-8S-aC1">
-                                <rect key="frame" x="25" y="71" width="364" height="262"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BC-jT-38n">
-                                <rect key="frame" x="25" y="341" width="364" height="27.333333333333314"/>
+                                <rect key="frame" x="25" y="226" width="364" height="247"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zSs-W4-dGG">
-                                <rect key="frame" x="25" y="376.33333333333337" width="364" height="307.33333333333337"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zSs-W4-dGG" firstAttribute="leading" secondItem="tPa-MW-A6I" secondAttribute="leading" constant="25" id="2Go-41-06u"/>
-                            <constraint firstItem="25m-8S-aC1" firstAttribute="top" secondItem="tPa-MW-A6I" secondAttribute="top" constant="27" id="7wl-pV-t1N"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="leading" secondItem="25m-8S-aC1" secondAttribute="leading" id="8i7-Np-DoA"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="top" secondItem="25m-8S-aC1" secondAttribute="bottom" constant="8" symbolic="YES" id="E2a-7t-F0k"/>
-                            <constraint firstItem="25m-8S-aC1" firstAttribute="leading" secondItem="zSs-W4-dGG" secondAttribute="leading" id="Ffa-hP-JOI"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="top" secondItem="25m-8S-aC1" secondAttribute="bottom" constant="8" id="Mp3-Mn-jJ8"/>
-                            <constraint firstItem="25m-8S-aC1" firstAttribute="centerY" secondItem="G0S-mT-ENx" secondAttribute="centerY" constant="-166" id="PL7-PQ-uDj"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="trailing" secondItem="25m-8S-aC1" secondAttribute="trailing" id="Yvo-yw-SiZ"/>
-                            <constraint firstItem="tPa-MW-A6I" firstAttribute="trailing" secondItem="zSs-W4-dGG" secondAttribute="trailing" constant="25" id="glQ-ac-OBt"/>
-                            <constraint firstItem="25m-8S-aC1" firstAttribute="trailing" secondItem="zSs-W4-dGG" secondAttribute="trailing" id="o7E-Fo-6Wq"/>
-                            <constraint firstItem="zSs-W4-dGG" firstAttribute="centerY" secondItem="G0S-mT-ENx" secondAttribute="centerY" constant="162" id="qjR-y7-62m"/>
-                            <constraint firstItem="zSs-W4-dGG" firstAttribute="top" secondItem="0BC-jT-38n" secondAttribute="bottom" constant="8" id="wkF-Zo-cgt"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="top" secondItem="tPa-MW-A6I" secondAttribute="top" constant="182" id="6GZ-XN-Ff5"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="leading" secondItem="tPa-MW-A6I" secondAttribute="leading" constant="25" id="Bk2-6U-xjr"/>
+                            <constraint firstItem="tPa-MW-A6I" firstAttribute="bottom" secondItem="0BC-jT-38n" secondAttribute="bottom" constant="214" id="EKc-ex-kkQ"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="centerX" secondItem="G0S-mT-ENx" secondAttribute="centerX" id="edj-Dj-Jhl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tPa-MW-A6I"/>
                     </view>
                     <connections>
-                        <outlet property="aciklama" destination="zSs-W4-dGG" id="I2h-cr-Dqc"/>
                         <outlet property="baslik" destination="0BC-jT-38n" id="oXA-tM-Y9w"/>
-                        <outlet property="resim" destination="25m-8S-aC1" id="w5q-wf-oox"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwH-MB-O7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>

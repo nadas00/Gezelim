@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class tanitimViewController: UIViewController {
+    
+    
     func addNavBarImage() {
         
         let navController = navigationController!
@@ -37,19 +40,43 @@ class tanitimViewController: UIViewController {
     
     
     
-    var GezilecekYerBasliklari = [String]()
-    var resim1 = UIImage()
-    var baslik1=""
-    var aciklama1=""
+     var ref: DatabaseReference!
+     var databaseHandle:DatabaseHandle?
+     var postData = ""
+    
+//    var GezilecekYerBasliklari = [String]()
+//    var resim1 = UIImage()
+//    var baslik1=""
+//    var aciklama1=""
+    var secilmisGezilecekYer = 0
+    var secilmisSehir = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
           addNavBarImage()
+        
+        //set firebase reference
+         ref = Database.database().reference()
+         //retrieve post and listen for changes
+        ref?.child(String(secilmisSehir)).child("tripLocations").child(String(secilmisGezilecekYer)).child("description").observe(.value, with: { (snapshot) in
+            
+           
+             //code to execute when a child added under Posts
+            let post = snapshot.value as? String
+                        if let actualPost = post{
+                            self.postData=actualPost
+                            print(actualPost)
+                           
+                           
+                        }
+                    })
 
-        resim.image=resim1
-        baslik.text=baslik1
-        aciklama.text=aciklama1
-        aciklama.isEditable=false
+      
+        self.baslik.text="dasasd"
+
+      
+    
+       
     }
     
 

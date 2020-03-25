@@ -77,7 +77,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     var fotolar = [UIImage]()
     var aciklamalar = [String]()
     var secilmisSehir = 0
-    var seciliGezilecekYer = ""
+    var seciliGezilecekYer = 0
     var seciliResim = UIImage()
     var seciliAciklama = ""
     var seciliSehir=""
@@ -86,11 +86,9 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        let tanitimVC = segue.destination as! tanitimViewController
-        
-        tanitimVC.baslik1 = seciliGezilecekYer
-        tanitimVC.resim1 = seciliResim
-        tanitimVC.aciklama1 = seciliAciklama
-        
+
+        tanitimVC.secilmisGezilecekYer = seciliGezilecekYer
+        tanitimVC.secilmisSehir = secilmisSehir
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -98,7 +96,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
         
         //konak , alsc vb. ait değerler
         
-        seciliGezilecekYer = SegGezilecekYerler[indexPath.row]
+        seciliGezilecekYer = indexPath.item+1
         
         if seciliSehir=="izmir"{
     
