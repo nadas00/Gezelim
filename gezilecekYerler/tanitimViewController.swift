@@ -32,22 +32,13 @@ class tanitimViewController: UIViewController {
     }
     
     
+  
     
-    @IBOutlet weak var resim: UIImageView!
     @IBOutlet weak var baslik: UILabel!
-    @IBOutlet weak var aciklama: UITextView!
     
-    
-    
-    
-     var ref: DatabaseReference!
-     var databaseHandle:DatabaseHandle?
-     var postData = ""
-    
-//    var GezilecekYerBasliklari = [String]()
-//    var resim1 = UIImage()
-//    var baslik1=""
-//    var aciklama1=""
+    var ref: DatabaseReference!
+    var databaseHandle:DatabaseHandle?
+    var postData = ""
     var secilmisGezilecekYer = 0
     var secilmisSehir = 0
 
@@ -66,13 +57,13 @@ class tanitimViewController: UIViewController {
                         if let actualPost = post{
                             self.postData=actualPost
                             print(actualPost)
-                           
+                            self.baslik.text=self.postData
                            
                         }
                     })
 
       
-        self.baslik.text="dasasd"
+   
 
       
     
@@ -80,14 +71,5 @@ class tanitimViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

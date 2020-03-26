@@ -39,7 +39,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Eu-WD-b5J">
-                                                            <rect key="frame" x="382" y="44" width="23" height="16"/>
+                                                            <rect key="frame" x="383" y="44" width="23" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -145,7 +145,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oes-Ye-qTc">
-                                                            <rect key="frame" x="342" y="43" width="23" height="17"/>
+                                                            <rect key="frame" x="343" y="42" width="23" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -262,7 +262,7 @@
                         <viewLayoutGuide key="safeArea" id="tPa-MW-A6I"/>
                     </view>
                     <connections>
-                        <outlet property="baslik" destination="0BC-jT-38n" id="oXA-tM-Y9w"/>
+                        <outlet property="baslik" destination="0BC-jT-38n" id="0iD-ND-Xur"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwH-MB-O7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
