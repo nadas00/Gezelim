@@ -49,11 +49,11 @@ class tanitimViewController: UIViewController {
         //set firebase reference
          ref = Database.database().reference()
          //retrieve post and listen for changes
-        ref?.child(String(secilmisSehir)).child("tripLocations").child(String(secilmisGezilecekYer)).child("description").observe(.value, with: { (snapshot) in
+        ref?.child(String(secilmisSehir)).child("tripLocations").child(String(secilmisGezilecekYer)).observe(.value, with: { (snapshot) in
             
            
              //code to execute when a child added under Posts
-            let post = snapshot.value as? String
+            let post = snapshot.childSnapshot(forPath: "description").value as? String
                         if let actualPost = post{
                             self.postData=actualPost
                             print(actualPost)
