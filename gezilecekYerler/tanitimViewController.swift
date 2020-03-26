@@ -35,10 +35,12 @@ class tanitimViewController: UIViewController {
   
     
     @IBOutlet weak var baslik: UILabel!
+    @IBOutlet weak var aciklama: UITextView!
     
     var ref: DatabaseReference!
     var databaseHandle:DatabaseHandle?
-    var postData = ""
+    var topicData = ""
+    var descriptionData = ""
     var secilmisGezilecekYer = 0
     var secilmisSehir = 0
 
@@ -53,13 +55,23 @@ class tanitimViewController: UIViewController {
             
            
              //code to execute when a child added under Posts
-            let post = snapshot.childSnapshot(forPath: "description").value as? String
-                        if let actualPost = post{
-                            self.postData=actualPost
+            let topic = snapshot.childSnapshot(forPath: "locationName").value as? String
+                        if let actualPost = topic{
+                            self.topicData=actualPost
                             print(actualPost)
-                            self.baslik.text=self.postData
+                            self.baslik.text=self.topicData
                            
                         }
+            
+            //code to execute when a child added under Posts
+              let description = snapshot.childSnapshot(forPath: "description").value as? String
+                          if let actualPost = description{
+                              self.descriptionData=actualPost
+                              print(actualPost)
+                              self.aciklama.text=self.descriptionData
+                             
+                          }
+            
                     })
 
       

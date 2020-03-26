@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		3DBF546E22A7FA8700C3E4C3 /* konak.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546D22A7FA8700C3E4C3 /* konak.jpg */; };
 		3DBF547022A7FF0500C3E4C3 /* kemeralti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DBF546F22A7FF0500C3E4C3 /* kemeralti.jpg */; };
 		3DE6B73A22A5ECE500ED1807 /* tanitimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE6B73922A5ECE500ED1807 /* tanitimViewController.swift */; };
+		C202E09E242CB73100CE7600 /* baslangicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202E09D242CB73100CE7600 /* baslangicVC.swift */; };
 		C22743752428FB1F001B3CAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C22743742428FB1F001B3CAD /* GoogleService-Info.plist */; };
 		FD6BC1955640C6901D8F488B /* Pods_gezilecekYerler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242A71FACEFF13522C4FE4C9 /* Pods_gezilecekYerler.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		3DE6B73922A5ECE500ED1807 /* tanitimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tanitimViewController.swift; sourceTree = "<group>"; };
 		9B10132A3BDC3EB694934FFD /* Pods-gezilecekYerler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gezilecekYerler.debug.xcconfig"; path = "Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler.debug.xcconfig"; sourceTree = "<group>"; };
 		B3AE6C63403B07C404344221 /* Pods-gezilecekYerler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gezilecekYerler.release.xcconfig"; path = "Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler.release.xcconfig"; sourceTree = "<group>"; };
+		C202E09D242CB73100CE7600 /* baslangicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baslangicVC.swift; sourceTree = "<group>"; };
 		C22743742428FB1F001B3CAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				3DA045D922AC8FA800BC2E7F /* ank.jpg */,
 				3DBEAB5A22AF0DC70092BE1A /* arrow.png */,
 				C22743742428FB1F001B3CAD /* GoogleService-Info.plist */,
+				C202E09D242CB73100CE7600 /* baslangicVC.swift */,
 			);
 			path = gezilecekYerler;
 			sourceTree = "<group>";
@@ -156,7 +159,6 @@
 				9B10132A3BDC3EB694934FFD /* Pods-gezilecekYerler.debug.xcconfig */,
 				B3AE6C63403B07C404344221 /* Pods-gezilecekYerler.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -296,6 +298,7 @@
 				3D5E404822A58E4F0005CAA6 /* GezilecekYerlerViewController.swift in Sources */,
 				3D5E403822A58AEB0005CAA6 /* ViewController.swift in Sources */,
 				3DA045D422AC89D500BC2E7F /* VCTableViewCell.swift in Sources */,
+				C202E09E242CB73100CE7600 /* baslangicVC.swift in Sources */,
 				3D5E403622A58AEB0005CAA6 /* AppDelegate.swift in Sources */,
 				3DE6B73A22A5ECE500ED1807 /* tanitimViewController.swift in Sources */,
 			);
