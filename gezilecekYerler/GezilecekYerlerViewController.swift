@@ -143,7 +143,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
         //set firebase reference
          ref = Database.database().reference()
          //retrieve post and listen for changes
-        ref?.child(String(secilmisSehir)).child("tripLocations").observe(.childAdded, with: { (snapshot) in
+        ref?.child("cities").child(String(secilmisSehir)).child("tripLocations").observe(.childAdded, with: { (snapshot) in
             
            
              //code to execute when a child added under Posts

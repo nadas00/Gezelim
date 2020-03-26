@@ -183,7 +183,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         //set firebase reference
         ref = Database.database().reference()
         //retrieve post and listen for changes
-        ref?.observe(.childAdded, with: { (snapshot) in
+        ref?.child("cities").observe(.childAdded, with: { (snapshot) in
             
             
             //code to execute when a child added under Posts

@@ -294,11 +294,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-VA-9tb">
-                                <rect key="frame" x="104" y="92" width="207" height="223"/>
+                                <rect key="frame" x="89" y="133" width="207" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="segseg"/>
+                                <state key="normal" title="illere git"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="HWN-S1-tnm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muf-zc-dv0">
+                                <rect key="frame" x="150" y="364" width="85" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="favorilere git"/>
+                                <connections>
+                                    <segue destination="c29-7Z-cm2" kind="show" id="BgU-hf-rxh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -310,6 +318,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzw-uA-F3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="822.554347826087"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Edi-ht-k4W">
+            <objects>
+                <viewController id="c29-7Z-cm2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wvm-8V-RzX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="buraya favoriye eklenmiş gezilecek yerler sahip olan  iller eklenecek tableview" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H34-y1-Khx">
+                                <rect key="frame" x="87" y="191" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lfv-N6-wpZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0x9-9i-Aw3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wl0-JJ-sgp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="822.554347826087"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gY8-BR-ntI">
+            <objects>
+                <viewController id="4au-XE-md8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T8i-Gp-tj9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="buraya bir önceki tableviewda seçilen ile ait geilecek yerler listelenecek" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-nz-2iz">
+                                <rect key="frame" x="87" y="164" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PJZ-XC-TTZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Gq-GW-7v7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771" y="823"/>
         </scene>
     </scenes>
     <resources>
