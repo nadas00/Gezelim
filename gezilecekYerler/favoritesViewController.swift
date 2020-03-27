@@ -46,7 +46,7 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
               
     
          
-          performSegue(withIdentifier: "gezilecekBağlantısı", sender: nil)
+          performSegue(withIdentifier: "fav", sender: nil)
       }
     
     
@@ -64,17 +64,22 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
          favoritesTable.delegate=self
         
         //set firebase reference
-              ref = Database.database().reference()
+        ref = Database.database().reference().child("favorites")
               //retrieve post and listen for changes
-              ref?.child("favorites").observe(.childAdded, with: { (snapshot) in
+        ref?.observe(.childAdded, with: { (snapshot) in
                   
                   
                   //code to execute when a child added under Posts
-                  let post = snapshot.key
-                      self.postData.append(post)
-                      self.favoritesTable.reloadData()
+                      let post = snapshot.childSnapshot(forPath: "provinceName").value as? String
+                       if let actualPost = post{
+                           self.postData.append(actualPost)
+                          print(actualPost)
+                          self.favoritesTable.reloadData()
+                       }
                   
               })
+        
+       
               
               
     }

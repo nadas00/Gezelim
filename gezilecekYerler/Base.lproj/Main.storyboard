@@ -416,7 +416,7 @@
                     <navigationItem key="navigationItem" id="0x9-9i-Aw3"/>
                     <connections>
                         <outlet property="favoritesTable" destination="iTy-oH-O2y" id="gWP-hW-A0C"/>
-                        <segue destination="4au-XE-md8" kind="show" id="As1-yx-q4R"/>
+                        <segue destination="4au-XE-md8" kind="show" identifier="fav" id="As1-yx-q4R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wl0-JJ-sgp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
