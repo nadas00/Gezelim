@@ -34,6 +34,8 @@
 		3DE6B73A22A5ECE500ED1807 /* tanitimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE6B73922A5ECE500ED1807 /* tanitimViewController.swift */; };
 		C202E09E242CB73100CE7600 /* baslangicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202E09D242CB73100CE7600 /* baslangicVC.swift */; };
 		C22743752428FB1F001B3CAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C22743742428FB1F001B3CAD /* GoogleService-Info.plist */; };
+		C255FA21242E30CC0026FE73 /* favoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255FA20242E30CC0026FE73 /* favoritesViewController.swift */; };
+		C255FA23242E3EE90026FE73 /* favoriteLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */; };
 		FD6BC1955640C6901D8F488B /* Pods_gezilecekYerler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242A71FACEFF13522C4FE4C9 /* Pods_gezilecekYerler.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		B3AE6C63403B07C404344221 /* Pods-gezilecekYerler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gezilecekYerler.release.xcconfig"; path = "Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler.release.xcconfig"; sourceTree = "<group>"; };
 		C202E09D242CB73100CE7600 /* baslangicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baslangicVC.swift; sourceTree = "<group>"; };
 		C22743742428FB1F001B3CAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C255FA20242E30CC0026FE73 /* favoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesViewController.swift; sourceTree = "<group>"; };
+		C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteLocationsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 				3DBEAB5A22AF0DC70092BE1A /* arrow.png */,
 				C22743742428FB1F001B3CAD /* GoogleService-Info.plist */,
 				C202E09D242CB73100CE7600 /* baslangicVC.swift */,
+				C255FA20242E30CC0026FE73 /* favoritesViewController.swift */,
+				C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */,
 			);
 			path = gezilecekYerler;
 			sourceTree = "<group>";
@@ -298,6 +304,8 @@
 				3D5E404822A58E4F0005CAA6 /* GezilecekYerlerViewController.swift in Sources */,
 				3D5E403822A58AEB0005CAA6 /* ViewController.swift in Sources */,
 				3DA045D422AC89D500BC2E7F /* VCTableViewCell.swift in Sources */,
+				C255FA23242E3EE90026FE73 /* favoriteLocationsViewController.swift in Sources */,
+				C255FA21242E30CC0026FE73 /* favoritesViewController.swift in Sources */,
 				C202E09E242CB73100CE7600 /* baslangicVC.swift in Sources */,
 				3D5E403622A58AEB0005CAA6 /* AppDelegate.swift in Sources */,
 				3DE6B73A22A5ECE500ED1807 /* tanitimViewController.swift in Sources */,
