@@ -14,6 +14,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     
     
     var ref: DatabaseReference!
+    var swipeRef:DatabaseReference!
     var databaseHandle:DatabaseHandle?
     var postData = [String]()
     
@@ -50,6 +51,45 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         gezilecekYerlerSearchBar.endEditing(true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deneme = UIContextualAction(style: .normal, title: "DENEME") { (action, view, nil) in
+            
+            
+            
+             let swipedLocation = indexPath.item+1
+//             print(swipedLocation)
+//             print(self.secilmisSehir)
+            
+            self.ref = Database.database().reference().child("cities")
+                   //retrieve post and listen for changes
+            self.ref?.child(String(self.secilmisSehir)).child("tripLocations").child(String(swipedLocation)).observe(.value, with: { (snapshot) in
+                      
+                     
+                       //code to execute when a child added under Posts
+                      let post = snapshot.childSnapshot(forPath: "locationName").value as? String
+                       if let actualPost = post{
+                           
+                          print(actualPost)
+                          
+                       }
+                
+                     let post2 = snapshot.childSnapshot(forPath: "locationCoordination").value as? String
+                                        if let actualPost2 = post2{
+                                            
+                                           print(actualPost2)
+                                           
+                                        }
+                   })
+            
+       
+            
+            
+        }
+        deneme.image = #imageLiteral(resourceName: "swipeFav")
+        deneme.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+         return UISwipeActionsConfiguration(actions: [deneme])
     }
     
     func addNavBarImage() {
@@ -141,9 +181,9 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
             print(err)
         }
         //set firebase reference
-         ref = Database.database().reference()
+         ref = Database.database().reference().child("cities")
          //retrieve post and listen for changes
-        ref?.child("cities").child(String(secilmisSehir)).child("tripLocations").observe(.childAdded, with: { (snapshot) in
+        ref?.child(String(secilmisSehir)).child("tripLocations").observe(.childAdded, with: { (snapshot) in
             
            
              //code to execute when a child added under Posts

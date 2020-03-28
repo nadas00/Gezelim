@@ -38,14 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
  */
     //soldan sağa okunan diller için solda bulunan kaydırma konfigrasyonu //tr :Sağ
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deneme = UIContextualAction(style: .normal, title: "DENEME") { (action, view, nil) in
-            print("deneme")
-        }
-        deneme.image = #imageLiteral(resourceName: "swipeFav")
-        deneme.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-         return UISwipeActionsConfiguration(actions: [deneme])
-    }
+
     func addNavBarImage() {
         
         let navController = navigationController!
