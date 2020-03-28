@@ -14,9 +14,11 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     
     @IBOutlet weak var favLocationsTable: UITableView!
     
+    
     var ref: DatabaseReference!
     var databaseHandle:DatabaseHandle?
     var postData = [String]()
+    var secilmisFavLoc = 0
     
     
 
@@ -50,6 +52,14 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
          return cell
      }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+       
+        
+        guard let cell = cell as? VCTableViewCell else { return }
+        
+        cell.animate()
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,7 +67,7 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
         //set firebase reference
            ref = Database.database().reference()
            //retrieve post and listen for changes
-          ref?.child("favorites").child("degis").observe(.childAdded, with: { (snapshot) in
+          ref?.child("favorites").child(String(secilmisFavLoc)).observe(.childAdded, with: { (snapshot) in
               
              
                //code to execute when a child added under Posts

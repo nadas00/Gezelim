@@ -49,7 +49,23 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
           performSegue(withIdentifier: "fav", sender: nil)
       }
     
-    
+
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           
+           if segue.identifier == "fav" {
+               
+               
+               let destinationVC = segue.destination as! favoriteLocationsViewController
+               
+               // işe yaramaz destinationVC.SegGezilecekYerler=gezilecekYerler
+            destinationVC.secilmisFavLoc = favSecilenSehir
+               
+           }
+           
+           
+       }
+       
+
     
     @IBOutlet weak var favoritesTable: UITableView!
     
