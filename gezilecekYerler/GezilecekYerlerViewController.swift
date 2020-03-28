@@ -17,6 +17,9 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     var swipeRef:DatabaseReference!
     var databaseHandle:DatabaseHandle?
     var postData = [String]()
+    var favCoord = ""
+    var favLoc = ""
+    var favLocId = ""
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,31 +65,39 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
 //             print(swipedLocation)
 //             print(self.secilmisSehir)
             
-            self.ref = Database.database().reference().child("cities")
+            self.ref = Database.database().reference()
                    //retrieve post and listen for changes
-            self.ref?.child(String(self.secilmisSehir)).child("tripLocations").child(String(swipedLocation)).observe(.value, with: { (snapshot) in
-                      
-                     
-                       //code to execute when a child added under Posts
-                      let post = snapshot.childSnapshot(forPath: "locationName").value as? String
+          self.ref?.observe(.value, with: { (snapshot) in
+            //code to execute when a child added under Posts
+                let post = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "locationName").value as? String
                        if let actualPost = post{
                            
-                          print(actualPost)
+                      
+                        self.favLoc=actualPost
                           
                        }
                 
-                     let post2 = snapshot.childSnapshot(forPath: "locationCoordination").value as? String
+                     let post2 = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "locationCoordination").value as? String
                                         if let actualPost2 = post2{
-                                            
-                                           print(actualPost2)
-                                           
-                                        }
-                   })
+                                            self.favCoord=actualPost2
+                                           }
+                
+                let post3 = snapshot.childSnapshot(forPath: "favorites").childSnapshot(forPath: String(self.secilmisSehir)).childrenCount
+                                                
+                let idOfSwipedLocation = post3
+                self.favLocId = String(idOfSwipedLocation)
+                
+            self.ref.child("favorites").child("2").child("3").setValue(["username": "deneme"])
+        
             
-       
+                
+                })
             
             
+        
         }
+        
+  
         deneme.image = #imageLiteral(resourceName: "swipeFav")
         deneme.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
          return UISwipeActionsConfiguration(actions: [deneme])
@@ -190,7 +201,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
             let post = snapshot.childSnapshot(forPath: "locationName").value as? String
              if let actualPost = post{
                  self.postData.append(actualPost)
-                print(actualPost)
+               
                 self.gezilecekYerlerTableView.reloadData()
              }
          })
