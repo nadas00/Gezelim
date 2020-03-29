@@ -109,6 +109,8 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                                
                                     self.ref.child("favorites").child(String(swipedLocation)).setValue(["provinceName": actualPost])
                                    
+                                self.postData.remove(at: indexPath.item)
+                                self.postKeyData.remove(at: indexPath.item)
                                   self.favoritesTable.reloadData()
                                }
                           })
