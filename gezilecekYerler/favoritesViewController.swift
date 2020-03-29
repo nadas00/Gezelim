@@ -16,7 +16,9 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
     var ref: DatabaseReference!
     var databaseHandle:DatabaseHandle?
     var postData = [String]()
-    var favSecilenSehir = 0
+    var favSecilenSehir = ""
+    var favSecilenKey = 0
+    var postKeyData = [Int]()
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,11 +42,13 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
       
       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           
-         
-              favSecilenSehir = indexPath.item+1
+        
+              favSecilenSehir = postData[indexPath.item]
+        favSecilenKey = postKeyData[indexPath.item]
              
-              
-    
+
+//        self.ref.child("favorites").queryOrderedByKey().queryEqual(toValue: favSecilenSehir).ref.removeValue()
+//
          
           performSegue(withIdentifier: "fav", sender: nil)
       }
@@ -58,7 +62,8 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                let destinationVC = segue.destination as! favoriteLocationsViewController
                
                // işe yaramaz destinationVC.SegGezilecekYerler=gezilecekYerler
-            destinationVC.secilmisFavLoc = favSecilenSehir
+            destinationVC.filtrelenmisFavLocIsmi = favSecilenSehir
+          destinationVC.secilmisFavLoc = favSecilenKey
                
            }
            
@@ -69,7 +74,7 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
               let deneme = UIContextualAction(style: .destructive, title: "Kaldır") { (action, view, nil) in
                   
                   
-                   let swipedLocation = indexPath.item+1
+                let swipedLocation = self.postKeyData[indexPath.item]
                 
                 
                 
@@ -80,10 +85,14 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                  
                          //retrieve post and listen for changes
                  
-                self.ref?.observeSingleEvent(of: .childRemoved, with: { (snapshot) in
+           
+                
+                self.ref?.observe(.childRemoved, with: { (snapshot) in
                 
                      
-                    self.ref.child("favorites").child(String(swipedLocation)).removeValue()
+               
+                    
+                    self.ref.child("favorites").child(String(self.favSecilenKey)).removeValue()
                   
                         
                        self.favoritesTable.reloadData()
@@ -134,9 +143,14 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
          
                   //code to execute when a child added under Posts
                       let post = snapshot.childSnapshot(forPath: "provinceName").value as? String
+                      let postKey = snapshot.key
+            
                        if let actualPost = post{
-                           self.postData.append(actualPost)
-                          print(actualPost)
+                        if snapshot.childrenCount>1 {
+                             self.postData.append(actualPost)
+                            self.postKeyData.append(Int(postKey)!)
+                        }
+                        print(self.postKeyData)
                           
                        }
                      self.favoritesTable.reloadData()

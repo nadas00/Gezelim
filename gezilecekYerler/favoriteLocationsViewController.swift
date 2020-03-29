@@ -19,6 +19,7 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     var databaseHandle:DatabaseHandle?
     var postData = [String]()
     var secilmisFavLoc = 0
+    var filtrelenmisFavLocIsmi = ""
     var selectChild = [String]()
     
     
