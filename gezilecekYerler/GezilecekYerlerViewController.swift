@@ -92,7 +92,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
            
                    
                                     
-                self.ref.child("favorites").child(String(self.secilmisSehir)).queryOrdered(byChild: "locationName").queryEqual(toValue: post).observe(.value, with: { snapshot in
+                self.ref.child("favorites").child(String(self.secilmisSehir)).queryOrdered(byChild: "locationName").queryEqual(toValue: post).observeSingleEvent(of: .value, with: { snapshot in
 
                                          if (snapshot.value is NSNull) {
                                              print("Name is not in use")
