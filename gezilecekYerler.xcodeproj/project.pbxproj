@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3879C670879FB8E68B5D7542 /* libPods-gezilecekYerler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F903868BA90278F60FFE89FB /* libPods-gezilecekYerler.a */; };
 		3D2FCD2822A8542B00ACA7C3 /* sehirler.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FCD2722A8542B00ACA7C3 /* sehirler.txt */; };
 		3D2FCD2A22A854B900ACA7C3 /* izmirGezilecekYerler.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FCD2922A854B900ACA7C3 /* izmirGezilecekYerler.txt */; };
 		3D2FCD2C22A8566E00ACA7C3 /* aciklamalar.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FCD2B22A8566E00ACA7C3 /* aciklamalar.txt */; };
@@ -36,11 +37,9 @@
 		C22743752428FB1F001B3CAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C22743742428FB1F001B3CAD /* GoogleService-Info.plist */; };
 		C255FA21242E30CC0026FE73 /* favoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255FA20242E30CC0026FE73 /* favoritesViewController.swift */; };
 		C255FA23242E3EE90026FE73 /* favoriteLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */; };
-		FD6BC1955640C6901D8F488B /* Pods_gezilecekYerler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242A71FACEFF13522C4FE4C9 /* Pods_gezilecekYerler.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		242A71FACEFF13522C4FE4C9 /* Pods_gezilecekYerler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gezilecekYerler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2FCD2722A8542B00ACA7C3 /* sehirler.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sehirler.txt; sourceTree = "<group>"; };
 		3D2FCD2922A854B900ACA7C3 /* izmirGezilecekYerler.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = izmirGezilecekYerler.txt; sourceTree = "<group>"; };
 		3D2FCD2B22A8566E00ACA7C3 /* aciklamalar.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = aciklamalar.txt; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		C22743742428FB1F001B3CAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C255FA20242E30CC0026FE73 /* favoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesViewController.swift; sourceTree = "<group>"; };
 		C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteLocationsViewController.swift; sourceTree = "<group>"; };
+		F903868BA90278F60FFE89FB /* libPods-gezilecekYerler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gezilecekYerler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD6BC1955640C6901D8F488B /* Pods_gezilecekYerler.framework in Frameworks */,
+				3879C670879FB8E68B5D7542 /* libPods-gezilecekYerler.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +154,7 @@
 		4F4D5B1624BCA6BD3738B30D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				242A71FACEFF13522C4FE4C9 /* Pods_gezilecekYerler.framework */,
+				F903868BA90278F60FFE89FB /* libPods-gezilecekYerler.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,7 +179,6 @@
 				3D5E402E22A58AEB0005CAA6 /* Sources */,
 				3D5E402F22A58AEB0005CAA6 /* Frameworks */,
 				3D5E403022A58AEB0005CAA6 /* Resources */,
-				B52BFA3E2A33BD8F4CC8E099 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,23 +274,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B52BFA3E2A33BD8F4CC8E099 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gezilecekYerler/Pods-gezilecekYerler-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -458,6 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XQ35A7B6NU;
 				INFOPLIST_FILE = gezilecekYerler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XQ35A7B6NU;
 				INFOPLIST_FILE = gezilecekYerler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
