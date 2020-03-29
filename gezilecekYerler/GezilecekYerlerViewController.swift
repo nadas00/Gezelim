@@ -97,7 +97,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
                                          if (snapshot.value is NSNull) {
                                              print("Name is not in use")
 
-                                            self.ref.child("favorites").child(String(self.secilmisSehir)).child(self.favLocId).setValue(["locationName": post,"locationCoordination":post2])
+                                            self.ref.child("favorites").child(String(self.secilmisSehir)).childByAutoId().setValue(["locationName": post,"locationCoordination":post2])
                                          } else {
                                              print("Name is in use")
                                          }
