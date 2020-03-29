@@ -64,7 +64,7 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     
   
       func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-              let deneme = UIContextualAction(style: .normal, title: "DENEME") { (action, view, nil) in
+              let deneme = UIContextualAction(style: .destructive, title: "Kaldır") { (action, view, nil) in
                   
  let swipedLocation = indexPath.item
                 print(self.selectChild[swipedLocation])
@@ -87,8 +87,7 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
               }
               
 
-              deneme.image = #imageLiteral(resourceName: "swipeFav")
-              deneme.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        
                return UISwipeActionsConfiguration(actions: [deneme])
           }
           
@@ -103,20 +102,12 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
         
         
         
-        self.ref?.child("favorites").child(String(self.secilmisFavLoc)).observe(.childAdded, with: { (snapshot) in
-                         
-                                  let childatValue = snapshot.key as? String
-                                   if let actualchildatValue = childatValue{
-                                       self.selectChild.append(actualchildatValue)
-                                     
-                                      
-                                      
-                                   }
-                               })
         
           ref?.child("favorites").child(String(secilmisFavLoc)).observe(.childAdded, with: { (snapshot) in
               
-             
+             let childatValue = snapshot.key
+            self.selectChild.append(childatValue)
+            
                //code to execute when a child added under Posts
               let post = snapshot.childSnapshot(forPath: "locationName").value as? String
                if let actualPost = post{

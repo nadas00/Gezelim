@@ -101,6 +101,8 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
                                          } else {
                                              print("Name is in use")
                                          }
+                    
+                    self.gezilecekYerlerTableView.reloadData()
                                      })
                     
 
@@ -113,7 +115,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
           
         }
         
-
+     
         deneme.image = #imageLiteral(resourceName: "swipeFav")
         deneme.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
          return UISwipeActionsConfiguration(actions: [deneme])
@@ -218,8 +220,9 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
              if let actualPost = post{
                  self.postData.append(actualPost)
                
-                self.gezilecekYerlerTableView.reloadData()
+               
              }
+            self.gezilecekYerlerTableView.reloadData()
          })
          
 
