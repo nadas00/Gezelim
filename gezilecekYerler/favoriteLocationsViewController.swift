@@ -60,6 +60,10 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
         cell.animate()
         
     }
+    
+  
+      
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

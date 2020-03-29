@@ -64,7 +64,54 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
            
            
        }
+   
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+              let deneme = UIContextualAction(style: .destructive, title: "Kaldır") { (action, view, nil) in
+                  
+                  
+                   let swipedLocation = indexPath.item+1
+                
+                
+                
+      //             print(swipedLocation)
+      //             print(self.secilmisSehir)
+                  
+                  self.ref = Database.database().reference()
+                 
+                         //retrieve post and listen for changes
+                 
+                self.ref?.observeSingleEvent(of: .childRemoved, with: { (snapshot) in
+                
+                     
+                    self.ref.child("favorites").child(String(swipedLocation)).removeValue()
+                  
+                        
+                       self.favoritesTable.reloadData()
+                    
+               })
+                
+                
+                           self.ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+                           
+                           let post = snapshot.childSnapshot(forPath: "favorites").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "provinceName").value as? String
+                            if let actualPost = post{
+                                
+                            
+                               
+                                    self.ref.child("favorites").child(String(swipedLocation)).setValue(["provinceName": actualPost])
+                                   
+                                  self.favoritesTable.reloadData()
+                               }
+                          })
+                
+                      }
+             
+
        
+               return UISwipeActionsConfiguration(actions: [deneme])
+        
+          }
+          
 
     
     @IBOutlet weak var favoritesTable: UITableView!
@@ -84,15 +131,15 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
               //retrieve post and listen for changes
         ref?.observe(.childAdded, with: { (snapshot) in
                   
-                  
+         
                   //code to execute when a child added under Posts
                       let post = snapshot.childSnapshot(forPath: "provinceName").value as? String
                        if let actualPost = post{
                            self.postData.append(actualPost)
                           print(actualPost)
-                          self.favoritesTable.reloadData()
+                          
                        }
-                  
+                     self.favoritesTable.reloadData()
               })
         
        
