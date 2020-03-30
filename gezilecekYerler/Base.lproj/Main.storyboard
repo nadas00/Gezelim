@@ -533,10 +533,10 @@
             </objects>
             <point key="canvasLocation" x="1769.5652173913045" y="822.554347826087"/>
         </scene>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="GiR-lX-khw">
             <objects>
-                <viewController id="b0Z-Og-y2v" customClass="map" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="b0Z-Og-y2v" customClass="mapViewController" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m4N-qL-Iqf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

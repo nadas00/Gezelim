@@ -17,7 +17,8 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     var swipeRef:DatabaseReference!
     var databaseHandle:DatabaseHandle?
     var postData = [String]()
-    var favCoord = ""
+    var favLat = ""
+     var favLong = ""
     var favLoc = ""
     var favLocId = ""
     
@@ -79,15 +80,16 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
                           
                        }
                 
-                     let post2 = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "locationCoordination").value as? String
+                     let post2 = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "lat").value as? String
                                         if let actualPost2 = post2{
-                                            self.favCoord=actualPost2
+                                            self.favLat=actualPost2
                                            }
                 
                 
-                let post3 = snapshot.childSnapshot(forPath: "favorites").childSnapshot(forPath: String(self.secilmisSehir)).childrenCount
-                self.favLocId = String(post3)
-                                                
+       let post3 = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "long").value as? String
+                                         if let actualPost3 = post3{
+                                             self.favLong=actualPost3
+                                            }
              
            
                    
@@ -97,7 +99,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
                                          if (snapshot.value is NSNull) {
                                              print("Name is not in use")
 
-                                            self.ref.child("favorites").child(String(self.secilmisSehir)).childByAutoId().setValue(["locationName": post,"locationCoordination":post2])
+                                            self.ref.child("favorites").child(String(self.secilmisSehir)).childByAutoId().setValue(["locationName": post,"lat":post2, "long":post3])
                                          } else {
                                              print("Name is in use")
                                          }

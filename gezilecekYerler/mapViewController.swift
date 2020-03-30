@@ -21,9 +21,13 @@ class customPin: NSObject, MKAnnotation {
     }
 }
 
-class map: UIViewController, MKMapViewDelegate {
+class mapViewController: UIViewController, MKMapViewDelegate {
 
-
+    var locations = [String]()
+    var coords = [String]()
+    var longs = [String]()
+    var lats = [String]()
+    
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -31,6 +35,10 @@ class map: UIViewController, MKMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(locations)
+        print(longs)
+        print(lats)
 
         mapView.delegate=self
      
@@ -39,11 +47,7 @@ class map: UIViewController, MKMapViewDelegate {
         createPolyline()
         mapView.setRegion(region, animated: true)
 
-        var locations = [CLLocationCoordinate2DMake]
-           var loc2 = [CLLocationCoordinate2DMake]
-          locations.append(contentsOf:loc2)
         
-
     }
     
   
