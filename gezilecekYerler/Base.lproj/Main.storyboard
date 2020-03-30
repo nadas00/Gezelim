@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JSo-n7-0JC">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,7 +38,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Eu-WD-b5J">
-                                                            <rect key="frame" x="383" y="44" width="23" height="16"/>
+                                                            <rect key="frame" x="382" y="44" width="23" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -145,7 +144,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oes-Ye-qTc">
-                                                            <rect key="frame" x="343" y="47" width="23" height="17"/>
+                                                            <rect key="frame" x="342" y="47" width="23" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -180,7 +179,7 @@
                                     <constraint firstAttribute="height" constant="91" id="J2Q-Oo-yqx"/>
                                 </constraints>
                             </imageView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Gezilecek yer ara..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUo-rd-siP">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Gezilecek yer ara..." translatesAutoresizingMaskIntoConstraints="NO" id="JUo-rd-siP">
                                 <rect key="frame" x="20" y="54" width="374" height="56"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -350,7 +349,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B46-ew-Q0d">
-                                                            <rect key="frame" x="383" y="44" width="23" height="16"/>
+                                                            <rect key="frame" x="382" y="44" width="23" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -434,9 +433,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zlW-Ln-t63">
                                 <rect key="frame" x="20" y="118" width="374" height="468"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NMW-Mo-Oks">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="62"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="17"/>
+                                    <state key="normal" title="Konumları Haritada Göster">
+                                        <color key="titleShadowColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="b0Z-Og-y2v" kind="show" id="SaW-eZ-3AF"/>
+                                    </connections>
+                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="115" id="DFw-JE-l78" customClass="VCTableViewCell" customModule="gezilecekYerler" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="115"/>
+                                        <rect key="frame" x="0.0" y="90" width="374" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DFw-JE-l78" id="AFX-gY-sIL">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="115"/>
@@ -445,24 +455,25 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1k3-a0-JeA">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="115"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-9U-zvG">
+                                                            <rect key="frame" x="342" y="47" width="23" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHm-9V-zlz">
-                                                            <rect key="frame" x="27" y="30" width="210" height="55"/>
+                                                            <rect key="frame" x="8" y="28" width="210" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="210" id="Rw0-T9-TMp"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-9U-zvG">
-                                                            <rect key="frame" x="343" y="47" width="23" height="17"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="wHm-9V-zlz" firstAttribute="centerY" secondItem="1k3-a0-JeA" secondAttribute="centerY" id="UOO-nZ-uA0"/>
-                                                        <constraint firstItem="wHm-9V-zlz" firstAttribute="top" secondItem="1k3-a0-JeA" secondAttribute="top" constant="30" id="eOW-Ro-hik"/>
-                                                        <constraint firstItem="wHm-9V-zlz" firstAttribute="leading" secondItem="1k3-a0-JeA" secondAttribute="leading" constant="27" id="pdj-w1-2BO"/>
+                                                        <constraint firstItem="wHm-9V-zlz" firstAttribute="centerY" secondItem="1k3-a0-JeA" secondAttribute="centerY" constant="-2" id="UOO-nZ-uA0"/>
+                                                        <constraint firstItem="wHm-9V-zlz" firstAttribute="top" secondItem="1k3-a0-JeA" secondAttribute="top" constant="28" id="eOW-Ro-hik"/>
+                                                        <constraint firstItem="wHm-9V-zlz" firstAttribute="leading" secondItem="1k3-a0-JeA" secondAttribute="leading" constant="8" id="pdj-w1-2BO"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -489,7 +500,7 @@
                                     <constraint firstAttribute="height" constant="91" id="ZvO-4U-5Xj"/>
                                 </constraints>
                             </imageView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Gezilecek yer ara..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZbK-42-NfS">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Gezilecek yer ara..." translatesAutoresizingMaskIntoConstraints="NO" id="ZbK-42-NfS">
                                 <rect key="frame" x="20" y="52" width="374" height="56"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -508,7 +519,7 @@
                             <constraint firstItem="ZbK-42-NfS" firstAttribute="top" secondItem="PJZ-XC-TTZ" secondAttribute="top" constant="8" id="WlR-xl-gXv"/>
                             <constraint firstItem="zlW-Ln-t63" firstAttribute="leading" secondItem="kgh-vG-GgI" secondAttribute="leading" id="XOM-hf-r4H"/>
                             <constraint firstItem="ZbK-42-NfS" firstAttribute="trailing" secondItem="T8i-Gp-tj9" secondAttribute="trailingMargin" id="XzQ-p6-yGE"/>
-                            <constraint firstItem="kgh-vG-GgI" firstAttribute="top" secondItem="zlW-Ln-t63" secondAttribute="bottom" constant="8" symbolic="YES" id="h8k-oH-JzO"/>
+                            <constraint firstItem="kgh-vG-GgI" firstAttribute="top" secondItem="zlW-Ln-t63" secondAttribute="bottom" constant="8" id="h8k-oH-JzO"/>
                             <constraint firstItem="ZbK-42-NfS" firstAttribute="trailing" secondItem="zlW-Ln-t63" secondAttribute="trailing" id="nDp-Ac-WbD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PJZ-XC-TTZ"/>
@@ -521,6 +532,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gq-GW-7v7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1769.5652173913045" y="822.554347826087"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="GiR-lX-khw">
+            <objects>
+                <viewController id="b0Z-Og-y2v" customClass="map" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m4N-qL-Iqf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2oS-ES-CDN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2oS-ES-CDN" firstAttribute="centerX" secondItem="m4N-qL-Iqf" secondAttribute="centerX" id="3aI-L6-bmg"/>
+                            <constraint firstItem="2oS-ES-CDN" firstAttribute="leading" secondItem="crb-ma-ClQ" secondAttribute="leading" id="Nv3-Fd-8X9"/>
+                            <constraint firstItem="2oS-ES-CDN" firstAttribute="centerY" secondItem="m4N-qL-Iqf" secondAttribute="centerY" constant="-2.5" id="VOL-VT-N7R"/>
+                            <constraint firstItem="2oS-ES-CDN" firstAttribute="top" secondItem="crb-ma-ClQ" secondAttribute="top" id="liI-f2-wBV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="crb-ma-ClQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rDc-XD-Rnj"/>
+                    <connections>
+                        <outlet property="mapView" destination="2oS-ES-CDN" id="cSu-pN-g2i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zWi-hY-cWq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708.6956521739135" y="812.77173913043487"/>
         </scene>
     </scenes>
     <resources>
