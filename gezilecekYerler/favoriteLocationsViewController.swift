@@ -22,6 +22,9 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     var filtrelenmisFavLocIsmi = ""
     var selectChild = [String]()
     
+     var lats = [String]()
+     var longs = [String]()
+    
     
 
      
@@ -92,6 +95,12 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
                return UISwipeActionsConfiguration(actions: [deneme])
           }
           
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          let mapVC = segue.destination as! mapViewController
+
+           mapVC.lats = lats
+        mapVC.longs=longs
+       }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,12 +126,19 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
                   self.favLocationsTable.reloadData()
                }
             
-            let coord = snapshot.childSnapshot(forPath: "locationCoordination").value as? String
-                          if let actualPost2 = coord{
-                              
+            let lat = snapshot.childSnapshot(forPath: "lat").value as? String
+                          if let actualPost2 = lat{
+                            self.lats.append(actualPost2)
                              print(actualPost2)
                              self.favLocationsTable.reloadData()
                           }
+            
+            let long = snapshot.childSnapshot(forPath: "long").value as? String
+                                    if let actualPost3 = long{
+                                      self.longs.append(actualPost3)
+                                       print(actualPost3)
+                                       self.favLocationsTable.reloadData()
+                                    }
            })
            
 
