@@ -128,36 +128,45 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var favoritesTable: UITableView!
     
     
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(false)
+        postData.removeAll()
+        postKeyData.removeAll()
+          //set firebase reference
+                ref = Database.database().reference().child("favorites")
+                      //retrieve post and listen for changes
+                ref?.observe(.childAdded, with: { (snapshot) in
+                          
+                 
+                          //code to execute when a child added under Posts
+                              let post = snapshot.childSnapshot(forPath: "provinceName").value as? String
+                              let postKey = snapshot.key
+                    
+                               if let actualPost = post{
+                                if snapshot.childrenCount>1 {
+                                     self.postData.append(actualPost)
+                                    self.postKeyData.append(Int(postKey)!)
+                                }
+        // neden 50 kere   print(self.postKeyData) ??
+                                  
+                               }
+                             self.favoritesTable.reloadData()
+                      })
+                
+//        favoritesTable.reloadData()
+              
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("didloaddeneme")
          self.favoritesTable.separatorColor = UIColor.clear
          favoritesTable.dataSource=self
          favoritesTable.delegate=self
         
-        //set firebase reference
-        ref = Database.database().reference().child("favorites")
-              //retrieve post and listen for changes
-        ref?.observe(.childAdded, with: { (snapshot) in
-                  
-         
-                  //code to execute when a child added under Posts
-                      let post = snapshot.childSnapshot(forPath: "provinceName").value as? String
-                      let postKey = snapshot.key
-            
-                       if let actualPost = post{
-                        if snapshot.childrenCount>1 {
-                             self.postData.append(actualPost)
-                            self.postKeyData.append(Int(postKey)!)
-                        }
-                        print(self.postKeyData)
-                          
-                       }
-                     self.favoritesTable.reloadData()
-              })
-        
+      
        
               
               
