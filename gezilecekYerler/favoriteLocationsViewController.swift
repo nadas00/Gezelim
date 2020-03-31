@@ -74,13 +74,16 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
                 print(self.selectChild[swipedLocation])
                 
                 
-                self.ref?.child("favoriler").child(String(self.secilmisFavLoc)).observeSingleEvent(of:.value, with: { (snapshot) in
+                self.ref?.child("favorites").child(String(self.secilmisFavLoc)).observeSingleEvent(of:.value, with: { (snapshot) in
                    
                     
                     self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(self.selectChild[swipedLocation]).removeValue()
                                    
                                    self.selectChild.remove(at: swipedLocation)
                     self.postData.remove(at: swipedLocation)
+                    self.lats.remove(at: swipedLocation)
+                    self.longs.remove(at: swipedLocation)
+
                                    self.favLocationsTable.reloadData()
                     
                      })
