@@ -100,6 +100,7 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
 
            mapVC.lats = lats
         mapVC.longs=longs
+        mapVC.locationNames=postData
        }
     
     override func viewDidLoad() {

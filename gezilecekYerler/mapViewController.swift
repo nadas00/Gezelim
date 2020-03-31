@@ -23,7 +23,7 @@ class customPin: NSObject, MKAnnotation {
 
 class mapViewController: UIViewController, MKMapViewDelegate {
 
-    var locations = [String]()
+    var locationNames = [String]()
     var coords = [String]()
     var longs = [Double]()
     var lats = [Double]()
@@ -36,7 +36,7 @@ class mapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(locations)
+        print(locationNames)
         print(longs)
         print(lats)
         
@@ -65,9 +65,11 @@ class mapViewController: UIViewController, MKMapViewDelegate {
    
         
         let arr = zip(lats, longs).map({[$0.0, $0.1]})
-        
-        
-    let locations = arr.map { CLLocationCoordinate2D(latitude: $0[0], longitude: $0[1]) }
+        let locations = arr.map { CLLocationCoordinate2D(latitude: $0[0], longitude: $0[1]) }
+        for index in 0...locationNames.count-1{
+                mapView.addAnnotation(customPin(pinTitle: locationNames[index], pinSubTitle: "", location: locations[index]))
+            }
+           
 
 
         
@@ -78,10 +80,18 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         
     
         
-//
+
+     
+    
+     
+     
+    
+        
 //self.mapView.addAnnotation(customPin(pinTitle: "Gaziemir", pinSubTitle: "", location: CLLocationCoordinate2D(latitude: locations[0].latitude, longitude: locations[0].longitude) ))
+//
 //self.mapView.addAnnotation(customPin(pinTitle: "Torbalı", pinSubTitle: "", location: CLLocationCoordinate2D(latitude: locations[1].latitude, longitude: locations[1].longitude) ))
 
+        
              
     }
 
