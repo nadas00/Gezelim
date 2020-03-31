@@ -22,8 +22,8 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     var filtrelenmisFavLocIsmi = ""
     var selectChild = [String]()
     
-     var lats = [String]()
-     var longs = [String]()
+     var lats = [Double]()
+     var longs = [Double]()
     
     
 
@@ -122,23 +122,44 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
               let post = snapshot.childSnapshot(forPath: "locationName").value as? String
                if let actualPost = post{
                    self.postData.append(actualPost)
-                  print(actualPost)
+                 
                   self.favLocationsTable.reloadData()
                }
             
-            let lat = snapshot.childSnapshot(forPath: "lat").value as? String
-                          if let actualPost2 = lat{
-                            self.lats.append(actualPost2)
-                             print(actualPost2)
-                             self.favLocationsTable.reloadData()
-                          }
+            let lat = snapshot.childSnapshot(forPath: "lat").value as? Double
+            if lat != nil{
+                self.lats.append(lat!)
+                print(lat)
+                print("denden")
+            }
             
-            let long = snapshot.childSnapshot(forPath: "long").value as? String
-                                    if let actualPost3 = long{
-                                      self.longs.append(actualPost3)
-                                       print(actualPost3)
+            
+            let long = snapshot.childSnapshot(forPath: "long").value as? Double
+              if long != nil{
+                          self.longs.append(long!)
+                print(long)
+                      }
+                      
+            
                                        self.favLocationsTable.reloadData()
-                                    }
+                                    
+            
+            
+            //
+            
+            
+            
+            
+            
+            
+            
+            //
+            
+            
+            
+            
+            
+            
            })
            
 

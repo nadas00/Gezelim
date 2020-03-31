@@ -25,8 +25,8 @@ class mapViewController: UIViewController, MKMapViewDelegate {
 
     var locations = [String]()
     var coords = [String]()
-    var longs = [String]()
-    var lats = [String]()
+    var longs = [Double]()
+    var lats = [Double]()
     
 
     @IBOutlet weak var mapView: MKMapView!
@@ -39,7 +39,11 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         print(locations)
         print(longs)
         print(lats)
-
+        
+        
+       
+        
+        
         mapView.delegate=self
      
         let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
@@ -52,14 +56,19 @@ class mapViewController: UIViewController, MKMapViewDelegate {
     
   
     
+    
+    
     func createPolyline(){
-        let locations = [
-            CLLocationCoordinate2DMake(38.337683, 27.128267), //GAZİEMİR
-            CLLocationCoordinate2DMake(38.153832, 27.387889), //TORBALI
-              CLLocationCoordinate2DMake(38.472526, 27.221037) //BORNOVA
-          
-              
-        ]
+        
+
+        
+   
+        
+        let arr = zip(lats, longs).map({[$0.0, $0.1]})
+        
+        
+    let locations = arr.map { CLLocationCoordinate2D(latitude: $0[0], longitude: $0[1]) }
+
 
         
         //create a Polyline
@@ -67,21 +76,12 @@ class mapViewController: UIViewController, MKMapViewDelegate {
 
         mapView.addOverlay(aPolyline)
         
+    
         
-        //create pins
-        
-         let sourceLocation = CLLocationCoordinate2D(latitude:locations[0].latitude , longitude: locations[0].longitude)
-         let sourcePin = customPin(pinTitle: "Gaziemir", pinSubTitle: "", location: sourceLocation)
-         self.mapView.addAnnotation(sourcePin)
-             
-             
-         let destinationLocation = CLLocationCoordinate2D(latitude:locations[1].latitude , longitude: locations[1].longitude)
-         let destinationPin = customPin(pinTitle: "Torbalı", pinSubTitle: "", location: destinationLocation)
-         self.mapView.addAnnotation(destinationPin)
-             
-         let son = CLLocationCoordinate2D(latitude:locations[2].latitude , longitude: locations[2].longitude)
-         let sonPin = customPin(pinTitle: "Bornova", pinSubTitle: "", location: son)
-         self.mapView.addAnnotation(sonPin)
+//
+//self.mapView.addAnnotation(customPin(pinTitle: "Gaziemir", pinSubTitle: "", location: CLLocationCoordinate2D(latitude: locations[0].latitude, longitude: locations[0].longitude) ))
+//self.mapView.addAnnotation(customPin(pinTitle: "Torbalı", pinSubTitle: "", location: CLLocationCoordinate2D(latitude: locations[1].latitude, longitude: locations[1].longitude) ))
+
              
     }
 

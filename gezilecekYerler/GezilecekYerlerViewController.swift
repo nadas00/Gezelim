@@ -17,8 +17,8 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     var swipeRef:DatabaseReference!
     var databaseHandle:DatabaseHandle?
     var postData = [String]()
-    var favLat = ""
-     var favLong = ""
+    var favLat = 0.0
+    var favLong = 0.0
     var favLoc = ""
     var favLocId = ""
     
@@ -80,13 +80,13 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
                           
                        }
                 
-                     let post2 = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "lat").value as? String
+                     let post2 = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "lat").value as? Double
                                         if let actualPost2 = post2{
                                             self.favLat=actualPost2
                                            }
                 
                 
-       let post3 = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "long").value as? String
+       let post3 = snapshot.childSnapshot(forPath: "cities").childSnapshot(forPath: String(self.secilmisSehir)).childSnapshot(forPath: "tripLocations").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "long").value as? Double
                                          if let actualPost3 = post3{
                                              self.favLong=actualPost3
                                             }
