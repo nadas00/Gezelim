@@ -66,11 +66,11 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         
         let arr = zip(lats, longs).map({[$0.0, $0.1]})
         let locations = arr.map { CLLocationCoordinate2D(latitude: $0[0], longitude: $0[1]) }
-        if locationNames.count>0 {
-            for index in 0...locationNames.count-1{
-                mapView.addAnnotation(customPin(pinTitle: locationNames[index], pinSubTitle: "", location: locations[index]))
-            }
-             }
+        
+        
+        
+        let annots = zip(locationNames, locations).map{customPin(pinTitle: $0, pinSubTitle: "", location: $1)}
+        mapView?.addAnnotations(annots)
 
 
         
