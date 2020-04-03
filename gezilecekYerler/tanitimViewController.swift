@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 class tanitimViewController: UIViewController {
     
@@ -36,13 +37,20 @@ class tanitimViewController: UIViewController {
     
     @IBOutlet weak var baslik: UILabel!
     @IBOutlet weak var aciklama: UITextView!
+    @IBOutlet weak var slideImages: UIImageView!
+    
     
     var ref: DatabaseReference!
     var databaseHandle:DatabaseHandle?
+    let storage = Storage.storage()
+    
+
     var topicData = ""
     var descriptionData = ""
     var secilmisGezilecekYer = 0
     var secilmisSehir = 0
+    var imgData = [String]()
+    var imgArr = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,33 +61,75 @@ class tanitimViewController: UIViewController {
          //retrieve post and listen for changes
         ref?.child("cities").child(String(secilmisSehir)).child("tripLocations").child(String(secilmisGezilecekYer)).observe(.value, with: { (snapshot) in
             
+            
+     
            
              //code to execute when a child added under Posts
             let topic = snapshot.childSnapshot(forPath: "locationName").value as? String
                         if let actualPost = topic{
                             self.topicData=actualPost
-                            print(actualPost)
+                 
                             self.baslik.text=self.topicData
                            
                         }
             
             //code to execute when a child added under Posts
               let description = snapshot.childSnapshot(forPath: "description").value as? String
-                          if let actualPost = description{
-                              self.descriptionData=actualPost
-                              print(actualPost)
+                          if let actualPost2 = description{
+                              self.descriptionData=actualPost2
+                   
                               self.aciklama.text=self.descriptionData
                              
                           }
             
                     })
-
-      
-   
-
-      
-    
+        
+        
        
+        ref?.child("cities").child(String(secilmisSehir)).child("tripLocations").child(String(secilmisGezilecekYer)).child("tripLocationImg").observe(.value, with: { (snapshot) in
+            
+            let imageCount = snapshot.childrenCount
+           
+            if imageCount > 0
+            {
+                for indexx in 1...imageCount
+                {
+                           let images = snapshot.childSnapshot(forPath: String(indexx)).value as? String
+                                                           if let actualPost3 = images
+                                                           {
+                                                               self.imgData.append(actualPost3)
+                                                               print(actualPost3)
+                                                            let storageRef = self.storage.reference().child(self.imgData[0]+".png")
+                                                            storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                                                                      if let error = error {
+                                                                          print("PLASESEE")
+                                                                          print(error.localizedDescription)
+                                                                          // Uh-oh, an error occurred!
+                                                                      } else {
+                                                                          // Data for "images/island.jpg" is returned
+                                                                         self.slideImages.image =  UIImage(data: data!)
+                                                                      }
+                                                                  }
+                                                                  
+                                                              
+                                                            }
+                }
+                
+                
+                
+         
+                
+            }
+ })
+
+
+        
+        
+        
+        
+        
+        
+        
     }
     
 

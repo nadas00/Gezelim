@@ -245,32 +245,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BC-jT-38n">
-                                <rect key="frame" x="25" y="348" width="369" height="41"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DRb-CB-FUZ">
-                                <rect key="frame" x="20" y="396" width="374" height="244"/>
+                                <rect key="frame" x="20" y="395" width="374" height="245"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ya5-Yj-i7v">
+                                <rect key="frame" x="20" y="95" width="374" height="213"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BC-jT-38n">
+                                <rect key="frame" x="20" y="335" width="374" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Kx6-Kd-DfE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DRb-CB-FUZ" firstAttribute="top" secondItem="0BC-jT-38n" secondAttribute="bottom" constant="8" id="G0L-Go-QfD"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="trailing" secondItem="G0S-mT-ENx" secondAttribute="trailingMargin" id="QHi-Ji-h1l"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="centerX" secondItem="DRb-CB-FUZ" secondAttribute="centerX" id="04f-cI-WFJ"/>
+                            <constraint firstItem="ya5-Yj-i7v" firstAttribute="leading" secondItem="DRb-CB-FUZ" secondAttribute="leading" id="5yW-JR-eCP"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="top" secondItem="G0S-mT-ENx" secondAttribute="top" constant="335" id="A7g-LG-09c"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="centerX" secondItem="ya5-Yj-i7v" secondAttribute="centerX" id="JDa-zY-oyk"/>
+                            <constraint firstItem="ya5-Yj-i7v" firstAttribute="top" secondItem="tPa-MW-A6I" secondAttribute="top" constant="51" id="VDM-ag-9HQ"/>
                             <constraint firstItem="DRb-CB-FUZ" firstAttribute="leading" secondItem="G0S-mT-ENx" secondAttribute="leadingMargin" id="Wn2-7g-NU2"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="centerX" secondItem="G0S-mT-ENx" secondAttribute="centerX" id="X8B-ru-Ffb"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="top" secondItem="ya5-Yj-i7v" secondAttribute="bottom" constant="27" id="Yh9-aS-M4A"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="leading" secondItem="tPa-MW-A6I" secondAttribute="leading" constant="20" id="cNO-IQ-Xob"/>
                             <constraint firstItem="tPa-MW-A6I" firstAttribute="bottom" secondItem="DRb-CB-FUZ" secondAttribute="bottom" constant="47" id="gZY-Fh-aqI"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="leading" secondItem="tPa-MW-A6I" secondAttribute="leading" constant="25" id="t7S-9q-MQ3"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="trailing" secondItem="DRb-CB-FUZ" secondAttribute="trailing" id="tGS-UF-lUR"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="centerY" secondItem="G0S-mT-ENx" secondAttribute="centerY" id="ux9-d7-Aw0"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="top" secondItem="tPa-MW-A6I" secondAttribute="top" constant="304" id="xNm-4o-5WC"/>
+                            <constraint firstItem="DRb-CB-FUZ" firstAttribute="top" secondItem="0BC-jT-38n" secondAttribute="bottom" constant="19" id="wrc-63-Bvp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tPa-MW-A6I"/>
                     </view>
@@ -278,6 +287,7 @@
                     <connections>
                         <outlet property="aciklama" destination="DRb-CB-FUZ" id="TvP-ZQ-NV7"/>
                         <outlet property="baslik" destination="0BC-jT-38n" id="0iD-ND-Xur"/>
+                        <outlet property="slideImages" destination="ya5-Yj-i7v" id="8N1-Sw-NvS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwH-MB-O7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
