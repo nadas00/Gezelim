@@ -5,7 +5,6 @@
 //  Created by gofret on 4.06.2019.
 //  Copyright © 2019 trihay. All rights reserved.
 //
-
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
@@ -51,6 +50,7 @@ class tanitimViewController: UIViewController {
     var secilmisSehir = 0
     var imgData = [String]()
     var imgArr = [UIImage]()
+    var selectedPhoto = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,7 +125,58 @@ class tanitimViewController: UIViewController {
 
         
         
-        
+        let bitirdim = UITapGestureRecognizer(target: self, action: #selector(heisenSakla))
+               slideImages.addGestureRecognizer(bitirdim)
+               slideImages.isUserInteractionEnabled = true
+
+              
+               
+           }
+           
+           
+           @objc func heisenSakla(){
+                  
+                     
+                      ref?.child("cities").child(String(secilmisSehir)).child("tripLocations").child(String(secilmisGezilecekYer)).child("tripLocationImg").observe(.value, with: { (snapshot) in
+                          
+                          let imageCount = snapshot.childrenCount
+                         
+                          if imageCount > 0
+                          {
+                              for indexx in 1...imageCount
+                              {
+                                         let images = snapshot.childSnapshot(forPath: String(indexx)).value as? String
+                                                                         if let actualPost3 = images
+                                                                         {
+                                                                             self.imgData.append(actualPost3)
+                                                                        
+                                                                          }
+                              }
+                              
+                              
+                              
+                       
+                              
+                          }
+                          if self.selectedPhoto == imageCount{
+                              self.selectedPhoto = 0
+                          }
+                          let storageRef = self.storage.reference().child(self.imgData[self.selectedPhoto]+".png")
+                          storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                                    if let error = error {
+                                        print("PLASESEE")
+                                        print(error.localizedDescription)
+                                        // Uh-oh, an error occurred!
+                                    } else {
+                                        // Data for "images/island.jpg" is returned
+                                       self.slideImages.image =  UIImage(data: data!)
+                                    }
+                                }
+
+               })
+               self.selectedPhoto =  self.selectedPhoto+1
+               print(selectedPhoto)
+                }
         
         
         
@@ -134,4 +185,4 @@ class tanitimViewController: UIViewController {
     
 
 
-}
+
