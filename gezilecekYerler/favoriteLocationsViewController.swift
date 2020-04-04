@@ -119,13 +119,32 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
         let movObjTemp = postData[sourceIndexPath.item]
          let movLong = longs[sourceIndexPath.item]
          let movLats = lats[sourceIndexPath.item]
+        
+        let movObjTemp2 = postData[destinationIndexPath.item]
+                let movLong2 = longs[destinationIndexPath.item]
+                let movLats2 = lats[destinationIndexPath.item]
+        
+        
+        self.ref.child("favorites").child(String(self.secilmisFavLoc)).observeSingleEvent(of: .value, with: { snapshot in
+            
+               self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(self.selectChild[destinationIndexPath.item]).updateChildValues(["locationName": movObjTemp,"lat":movLats, "long":movLong])
+           
+               self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(self.selectChild[sourceIndexPath.item]).updateChildValues(["locationName": movObjTemp2,"lat":movLats2, "long":movLong2])
+               
+        
+           })
+        
+        
         postData.remove(at: sourceIndexPath.item)
         longs.remove(at: sourceIndexPath.item)
          lats.remove(at: sourceIndexPath.item)
+        
+        
         postData.insert(movObjTemp, at: destinationIndexPath.item)
              longs.insert(movLong, at: destinationIndexPath.item)
               lats.insert(movLats, at: destinationIndexPath.item)
         
+ 
         
         
      
