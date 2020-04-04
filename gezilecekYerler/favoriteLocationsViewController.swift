@@ -13,6 +13,10 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     
     
     @IBOutlet weak var favLocationsTable: UITableView!
+    @IBAction func editAction(_ sender: UIBarButtonItem) {
+        self.favLocationsTable.isEditing = !self.favLocationsTable.isEditing
+        sender.title = (self.favLocationsTable.isEditing) ? "Tamam" : "Düzenle"
+    }
     
     
     var ref: DatabaseReference!
@@ -24,6 +28,10 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     
      var lats = [Double]()
      var longs = [Double]()
+    
+    var newLats = [Double]()
+       var newLongs = [Double]()
+    var newPostData = [String]()
     
     
 
@@ -101,10 +109,38 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           let mapVC = segue.destination as! mapViewController
 
-           mapVC.lats = lats
-        mapVC.longs=longs
-        mapVC.locationNames=postData
+        mapVC.lats = lats
+        mapVC.longs = longs
+        mapVC.locationNames = postData
        }
+    
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movObjTemp = postData[sourceIndexPath.item]
+         let movLong = longs[sourceIndexPath.item]
+         let movLats = lats[sourceIndexPath.item]
+        postData.remove(at: sourceIndexPath.item)
+        longs.remove(at: sourceIndexPath.item)
+         lats.remove(at: sourceIndexPath.item)
+        postData.insert(movObjTemp, at: destinationIndexPath.item)
+             longs.insert(movLong, at: destinationIndexPath.item)
+              lats.insert(movLats, at: destinationIndexPath.item)
+        
+        
+        
+     
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete){
+            postData.remove(at: indexPath.item)
+            longs.remove(at: indexPath.item)
+            lats.remove(at: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,7 +169,7 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
             let lat = snapshot.childSnapshot(forPath: "lat").value as? Double
             if lat != nil{
                 self.lats.append(lat!)
-                print(lat)
+                print(lat!)
                 print("denden")
             }
             
@@ -141,7 +177,7 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
             let long = snapshot.childSnapshot(forPath: "long").value as? Double
               if long != nil{
                           self.longs.append(long!)
-                print(long)
+                print(long!)
                       }
                       
             

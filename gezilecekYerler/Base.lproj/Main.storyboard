@@ -534,7 +534,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PJZ-XC-TTZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eUC-Lf-krg"/>
+                    <navigationItem key="navigationItem" id="eUC-Lf-krg">
+                        <barButtonItem key="rightBarButtonItem" title="Düzenle" id="3uB-Ft-4jy">
+                            <connections>
+                                <action selector="editAction:" destination="4au-XE-md8" id="B0C-4f-Bzm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="favLocationsTable" destination="zlW-Ln-t63" id="rvJ-Ab-PlL"/>
                     </connections>
