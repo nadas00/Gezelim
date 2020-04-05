@@ -119,27 +119,9 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
         let movObjTemp = postData[sourceIndexPath.item]
                             let movLong = longs[sourceIndexPath.item]
                             let movLats = lats[sourceIndexPath.item]
-                           
-                           let movObjTemp2 = postData[destinationIndexPath.item]
-                                   let movLong2 = longs[destinationIndexPath.item]
-                                   let movLats2 = lats[destinationIndexPath.item]
+                        
         
-           if ((sourceIndexPath.item-destinationIndexPath.item ==  1 ) || (sourceIndexPath.item-destinationIndexPath.item ==  -1)) {
-               
-                 
-                      
-                   
-                      
-                      
-                      self.ref.child("favorites").child(String(self.secilmisFavLoc)).observeSingleEvent(of: .value, with: { snapshot in
-                          
-                             self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(self.selectChild[destinationIndexPath.item]).updateChildValues(["locationName": movObjTemp,"lat":movLats, "long":movLong])
-                         
-                             self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(self.selectChild[sourceIndexPath.item]).updateChildValues(["locationName": movObjTemp2,"lat":movLats2, "long":movLong2])
-                             
-                      
-                         })
-                      
+          
                       
                       postData.remove(at: sourceIndexPath.item)
                       longs.remove(at: sourceIndexPath.item)
@@ -149,20 +131,21 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
                       postData.insert(movObjTemp, at: destinationIndexPath.item)
                            longs.insert(movLong, at: destinationIndexPath.item)
                             lats.insert(movLats, at: destinationIndexPath.item)
-                      
-               
-           }else{
-            
-            
-            let alert = UIAlertController(title: "Uyarı", message: "En fazla bir sütun ileriye sürükleme işlemi gerçekleştiriniz", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "Tamam", style: .cancel, handler: nil) // tamam butonu tanımı
-            alert.addAction(okButton) // action eklendi.
-            // yapıları görüntülemede kullanılır.
-            self.present(alert, animated: true, completion: nil) // completion : işlem sonrası birşeyler yapılacak mı ?
-            
-            
-            
-            favLocationsTable.reloadData()
+        
+        
+                        
+    
+        self.ref.child("favorites").child(String(self.secilmisFavLoc)).observe(.childAdded, with: { snapshot in
+                                  
+                                  for index in 0...self.postData.count-1{
+                                      
+                                      self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(self.selectChild[index]).updateChildValues(["locationName":self.postData[index],"lat":self.lats[index],"long":self.longs[index]])
+                                     
+                                  }
+                                  
+                                  
+                                 })
+
             
            }
         
@@ -172,7 +155,7 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
      
         
         
-    }
+   
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete){
@@ -198,6 +181,10 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
               
              let childatValue = snapshot.key
             self.selectChild.append(childatValue)
+            
+           
+            
+            
             
                //code to execute when a child added under Posts
               let post = snapshot.childSnapshot(forPath: "locationName").value as? String
