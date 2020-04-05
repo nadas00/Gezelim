@@ -188,7 +188,7 @@
                                 </connections>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EoU-Lm-P2R" firstAttribute="top" secondItem="JUo-rd-siP" secondAttribute="bottom" constant="10" id="48J-j1-Vzp"/>
                             <constraint firstItem="EoU-Lm-P2R" firstAttribute="leading" secondItem="vnM-ZG-GrD" secondAttribute="leading" id="J6A-ua-Xh7"/>
@@ -247,7 +247,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DRb-CB-FUZ">
                                 <rect key="frame" x="20" y="395" width="374" height="245"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -267,7 +267,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0BC-jT-38n" firstAttribute="centerX" secondItem="DRb-CB-FUZ" secondAttribute="centerX" id="04f-cI-WFJ"/>
                             <constraint firstItem="ya5-Yj-i7v" firstAttribute="leading" secondItem="DRb-CB-FUZ" secondAttribute="leading" id="5yW-JR-eCP"/>
@@ -302,20 +302,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-VA-9tb">
-                                <rect key="frame" x="89" y="133" width="207" height="223"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="illere git"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="HWN-S1-tnm"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muf-zc-dv0">
-                                <rect key="frame" x="150" y="364" width="85" height="54"/>
+                                <rect key="frame" x="165" y="465" width="85" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="favorilere git"/>
                                 <connections>
                                     <segue destination="c29-7Z-cm2" kind="show" id="BgU-hf-rxh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-VA-9tb">
+                                <rect key="frame" x="104" y="151" width="207" height="223"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="illere git"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="HWN-S1-tnm"/>
                                 </connections>
                             </button>
                         </subviews>
