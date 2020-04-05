@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JSo-n7-0JC">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Ve-5g-fIi">
-                                <rect key="frame" x="0.0" y="130" width="414" height="458"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="104" id="HVa-SM-anU" customClass="VCTableViewCell" customModule="gezilecekYerler" customModuleProvider="target">
@@ -68,13 +68,13 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="UcG-RE-89n">
-                                <rect key="frame" x="20" y="596" width="374" height="91"/>
+                                <rect key="frame" x="20" y="722" width="374" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="oSL-R1-lai"/>
                                 </constraints>
                             </imageView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Şehir ara..." translatesAutoresizingMaskIntoConstraints="NO" id="jFC-Is-BBW">
-                                <rect key="frame" x="20" y="54" width="374" height="56"/>
+                                <rect key="frame" x="20" y="98" width="374" height="56"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -118,11 +118,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="I99-NJ-v6h" customClass="GezilecekYerlerViewController" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="whc-HG-bpJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-Lm-P2R">
-                                <rect key="frame" x="20" y="120" width="374" height="468"/>
+                                <rect key="frame" x="20" y="164" width="374" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="115" id="4T6-xf-gTV" customClass="VCTableViewCell" customModule="gezilecekYerler" customModuleProvider="target">
@@ -174,13 +174,13 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="vnM-ZG-GrD">
-                                <rect key="frame" x="20" y="596" width="374" height="91"/>
+                                <rect key="frame" x="20" y="722" width="374" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="J2Q-Oo-yqx"/>
                                 </constraints>
                             </imageView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Gezilecek yer ara..." translatesAutoresizingMaskIntoConstraints="NO" id="JUo-rd-siP">
-                                <rect key="frame" x="20" y="54" width="374" height="56"/>
+                                <rect key="frame" x="20" y="98" width="374" height="56"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -221,12 +221,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2o3-Ye-LYe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jbo-bh-V1R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="alb-Dr-ZeP">
-                        <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -242,11 +242,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="RzP-wK-973" customClass="tanitimViewController" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G0S-mT-ENx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DRb-CB-FUZ">
-                                <rect key="frame" x="20" y="395" width="374" height="245"/>
+                                <rect key="frame" x="20" y="395" width="374" height="371"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -254,7 +254,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ya5-Yj-i7v">
-                                <rect key="frame" x="20" y="95" width="374" height="213"/>
+                                <rect key="frame" x="20" y="139" width="374" height="169"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BC-jT-38n">
                                 <rect key="frame" x="20" y="335" width="374" height="41"/>
@@ -299,45 +299,77 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="8b9-s5-dxD" customClass="baslangicVC" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bqd-XQ-Uab">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muf-zc-dv0">
-                                <rect key="frame" x="165" y="465" width="85" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="favorilere git"/>
-                                <connections>
-                                    <segue destination="c29-7Z-cm2" kind="show" id="BgU-hf-rxh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-VA-9tb">
-                                <rect key="frame" x="104" y="151" width="207" height="223"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="illere git"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-VA-9tb">
+                                <rect key="frame" x="20" y="341" width="374" height="176"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="28"/>
+                                <color key="tintColor" systemColor="quaternarySystemFillColor" red="0.4549019608" green="0.4549019608" blue="0.50196078430000002" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" title="İlleri Görüntüle">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="HWN-S1-tnm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muf-zc-dv0">
+                                <rect key="frame" x="20" y="525" width="374" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="1vi-4A-ht6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="28"/>
+                                <color key="tintColor" systemColor="quaternarySystemFillColor" red="0.4549019608" green="0.4549019608" blue="0.50196078430000002" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" title="Favorileri Görüntüle">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="c29-7Z-cm2" kind="show" id="BgU-hf-rxh"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="d1c-Fr-AHO">
+                                <rect key="frame" x="20" y="161" width="374" height="172"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="Aav-Fz-dC5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="top" secondItem="bYK-dl-fhe" secondAttribute="top" constant="73" id="3Si-K6-oPT"/>
+                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="leading" secondItem="Bqd-XQ-Uab" secondAttribute="leadingMargin" id="DnN-rz-J9y"/>
+                            <constraint firstItem="muf-zc-dv0" firstAttribute="top" secondItem="FuH-VA-9tb" secondAttribute="bottom" constant="8" id="Fhr-9B-ZWF"/>
+                            <constraint firstItem="FuH-VA-9tb" firstAttribute="top" secondItem="d1c-Fr-AHO" secondAttribute="bottom" constant="8" id="JJ1-my-wDs"/>
+                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="leading" secondItem="FuH-VA-9tb" secondAttribute="leading" id="Qky-6H-Bu0"/>
+                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="trailing" secondItem="FuH-VA-9tb" secondAttribute="trailing" id="VMk-D4-whs"/>
+                            <constraint firstItem="bYK-dl-fhe" firstAttribute="bottom" secondItem="muf-zc-dv0" secondAttribute="bottom" constant="126" id="Wpw-RJ-ON6"/>
+                            <constraint firstItem="FuH-VA-9tb" firstAttribute="leading" secondItem="muf-zc-dv0" secondAttribute="leading" id="hvZ-nB-9UO"/>
+                            <constraint firstItem="FuH-VA-9tb" firstAttribute="trailing" secondItem="muf-zc-dv0" secondAttribute="trailing" id="lzI-zq-f2e"/>
+                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="trailing" secondItem="Bqd-XQ-Uab" secondAttribute="trailingMargin" id="xY2-zl-vFE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bYK-dl-fhe"/>
                     </view>
                     <navigationItem key="navigationItem" id="tJu-BG-Uzd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzw-uA-F3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="822.554347826087"/>
+            <point key="canvasLocation" x="137.68115942028987" y="822.32142857142856"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="Edi-ht-k4W">
             <objects>
                 <viewController id="c29-7Z-cm2" customClass="favoritesViewController" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wvm-8V-RzX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iTy-oH-O2y">
-                                <rect key="frame" x="0.0" y="128" width="414" height="458"/>
+                                <rect key="frame" x="0.0" y="172" width="414" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="104" id="KP4-MW-fxA" customClass="VCTableViewCell" customModule="gezilecekYerler" customModuleProvider="target">
@@ -389,13 +421,13 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-XA-Erh">
-                                <rect key="frame" x="20" y="594" width="374" height="91"/>
+                                <rect key="frame" x="20" y="720" width="374" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="6RF-z3-Tdf"/>
                                 </constraints>
                             </imageView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Şehir ara..." translatesAutoresizingMaskIntoConstraints="NO" id="vdK-m6-ON8">
-                                <rect key="frame" x="20" y="52" width="374" height="56"/>
+                                <rect key="frame" x="20" y="96" width="374" height="56"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -437,19 +469,17 @@
             <objects>
                 <viewController id="4au-XE-md8" customClass="favoriteLocationsViewController" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T8i-Gp-tj9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zlW-Ln-t63">
-                                <rect key="frame" x="20" y="118" width="374" height="468"/>
+                                <rect key="frame" x="20" y="162" width="374" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NMW-Mo-Oks">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="62"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="17"/>
-                                    <state key="normal" title="Konumları Haritada Göster">
-                                        <color key="titleShadowColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
+                                    <state key="normal" title="Konumları Haritada Göster"/>
                                     <connections>
                                         <segue destination="b0Z-Og-y2v" kind="show" id="SaW-eZ-3AF"/>
                                     </connections>
@@ -505,13 +535,13 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-vG-GgI">
-                                <rect key="frame" x="20" y="594" width="374" height="91"/>
+                                <rect key="frame" x="20" y="720" width="374" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="ZvO-4U-5Xj"/>
                                 </constraints>
                             </imageView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Gezilecek yer ara..." translatesAutoresizingMaskIntoConstraints="NO" id="ZbK-42-NfS">
-                                <rect key="frame" x="20" y="52" width="374" height="56"/>
+                                <rect key="frame" x="20" y="96" width="374" height="56"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -554,11 +584,11 @@
             <objects>
                 <viewController id="b0Z-Og-y2v" customClass="mapViewController" customModule="gezilecekYerler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m4N-qL-Iqf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2oS-ES-CDN">
-                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="715"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -583,5 +613,6 @@
     <resources>
         <image name="arrow.png" width="512" height="512"/>
         <image name="bottomBanner.png" width="3465" height="1148"/>
+        <image name="topBanner.png" width="2713" height="1172"/>
     </resources>
 </document>
