@@ -129,15 +129,18 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "gezilecekBağlantısı" {
-            
-            
-            let destinationVC = segue.destination as! GezilecekYerlerViewController
-            
-            // işe yaramaz destinationVC.SegGezilecekYerler=gezilecekYerler
-            destinationVC.secilmisSehir = ilkSayfaSecilenSehir
-            
-        }
+       
+            if segue.identifier == "gezilecekBağlantısı" {
+                    
+                    
+                    let destinationVC = segue.destination as! GezilecekYerlerViewController
+                    
+                    // işe yaramaz destinationVC.SegGezilecekYerler=gezilecekYerler
+                    destinationVC.secilmisSehir = ilkSayfaSecilenSehir
+                    
+                }
+      
+    
         
         
     }
@@ -145,14 +148,36 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
  
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          var postDataIndex = 1
+ 
+
+        if searching{
+
+            
+            for index in self.postData{
+                if(index == searchSehir[indexPath.item].description){
+                   ilkSayfaSecilenSehir = postDataIndex
+                     performSegue(withIdentifier: "gezilecekBağlantısı", sender: nil)
+                   
+                    
+                }
+                postDataIndex+=1
+            }
+            
+            
+
+
+        }else{
+             ilkSayfaSecilenSehir = indexPath.item+1
+             performSegue(withIdentifier: "gezilecekBağlantısı", sender: nil)
+
+           
+
+        }
+
+
         
        
-            ilkSayfaSecilenSehir = indexPath.item+1
-           
-            
-  
-       
-        performSegue(withIdentifier: "gezilecekBağlantısı", sender: nil)
     }
     
     
@@ -238,10 +263,15 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
 extension ViewController : UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchSehir = sehirler.filter({$0.prefix(searchText.count)==searchText})
-        searching=true
-        tableView.reloadData()
+        
+
+            searchSehir = postData.filter({$0.prefix(searchText.count)==searchText})
+                   searching=true
+                   tableView.reloadData()
+
+       
     }
+    
 }
 
 

@@ -24,8 +24,14 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postData.count
+        if searching{
+            return searchGezilecekYerler.count
+        }else{
+            return postData.count
+        }
+       
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -34,10 +40,19 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
         
       
        
-   
-            
-        //cell ismi belirler
+         
+     if searching{
+         cell.labelCell.text = searchGezilecekYerler[indexPath.row]
+         
+        
+         }
+     
+     else{
+         
+     //cell ismi belirler
         cell.labelCell.text=postData[indexPath.row]
+        
+     }
            
      
 
@@ -163,27 +178,34 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var postDataIndex = 1
+        if searching{
+
+                
+                for index in self.postData{
+                    if(index == searchGezilecekYerler[indexPath.item].description){
+                       seciliGezilecekYer = postDataIndex
+                         performSegue(withIdentifier: "tanitimBaglantisi", sender: nil)
+                       
+                        
+                    }
+                    postDataIndex+=1
+                }
+                
+                
+
+
+            }else{
+                 seciliGezilecekYer = indexPath.item+1
+                 performSegue(withIdentifier: "tanitimBaglantisi", sender: nil)
+
+               
+
+            }
+ 
         
         
-        //konak , alsc vb. ait değerler
-        
-        seciliGezilecekYer = indexPath.item+1
-        
-        if seciliSehir=="izmir"{
-    
-       seciliAciklama = aciklamalar[indexPath.row]
-       seciliResim = fotolar[indexPath.row]}
-        if seciliSehir=="istanbul"{
-      
-            seciliAciklama = aciklamalar[(indexPath.row+3)]
-            seciliResim = fotolar[(indexPath.row+3)]
-            
-        }
-            
-        
-        
-        
-             performSegue(withIdentifier: "tanitimBaglantisi", sender: nil)
+       
         }
       
         
@@ -200,6 +222,8 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
          self.gezilecekYerlerTableView.separatorColor = UIColor.clear
         super.viewDidLoad()
          addNavBarImage()
+        
+        print(secilmisSehir)
         do {
             // This solution assumes  you've got the file in your bundle
             if let path = Bundle.main.path(forResource: "aciklamalar", ofType: "txt"){
@@ -257,7 +281,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
 extension GezilecekYerlerViewController : UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchGezilecekYerler = SegGezilecekYerler.filter({$0.prefix(searchText.count)==searchText})
+        searchGezilecekYerler = postData.filter({$0.prefix(searchText.count)==searchText})
         searching=true
         gezilecekYerlerTableView.reloadData()
        
