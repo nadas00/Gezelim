@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
@@ -21,21 +22,28 @@ class customPin: NSObject, MKAnnotation {
     }
 }
 
-class mapViewController: UIViewController, MKMapViewDelegate {
+class mapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     var locationNames = [String]()
     var coords = [String]()
     var longs = [Double]()
     var lats = [Double]()
     
+     let locationManager = CLLocationManager()
+    
 
     @IBOutlet weak var mapView: MKMapView!
     
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+//viewdidappear animasyon için
+    override func viewDidAppear(_ animated: Bool) {
+    super.viewDidLoad()
         
+            checkLocationServices()
+       
+        
+        
+      
         print(locationNames)
         print(longs)
         print(lats)
@@ -47,7 +55,7 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate=self
         
         var myInitLocation = CLLocationCoordinate2D(latitude: lats[0], longitude: longs[0])
-        let span = MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3)
+        let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
              let region = MKCoordinateRegion(center: myInitLocation, span: span)
            
              mapView.setRegion(region, animated: true)
@@ -117,6 +125,66 @@ let polylineRender = MKPolylineRenderer(overlay: overlay)
     }
 
 
-}
+     func setupLocationManager() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        }
+        
+        
+
+        
+        
+        func checkLocationServices() {
+            if CLLocationManager.locationServicesEnabled() {
+                setupLocationManager()
+                checkLocationAuthorization()
+              
+                      
+            } else {
+                // Show alert letting the user know they have to turn this on.
+            }
+        }
+        
+        
+        func checkLocationAuthorization() {
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedWhenInUse:
+                mapView.showsUserLocation = true
+                let konumLat = locationManager.location?.coordinate.latitude
+                                                           let konumLong =  locationManager.location?.coordinate.longitude
+                                                        
+                                                        
+
+                                        lats.insert(konumLat!, at: 0)
+                                                                         longs.insert(konumLong!, at: 0)
+                                                                         locationNames.insert("konumum", at: 0)
+                                    
+                
+              
+                                    
+                                 
+                
+                locationManager.startUpdatingLocation()
+                break
+            case .denied:
+                // Show alert instructing them how to turn on permissions
+                break
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .restricted:
+                // Show an alert letting them know what's up
+                break
+            case .authorizedAlways:
+                break
+            }
+        }
+    }
+
+
+
+
+
+
 
 //

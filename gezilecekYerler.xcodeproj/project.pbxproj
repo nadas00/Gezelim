@@ -39,6 +39,7 @@
 		C255FA23242E3EE90026FE73 /* favoriteLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */; };
 		C2A5DAED2432573F001ECB3A /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A5DAEC2432573F001ECB3A /* mapViewController.swift */; };
 		C2BB43072454C36600C11746 /* pngfind.com-white-rectangle-png-1205004.png in Resources */ = {isa = PBXBuildFile; fileRef = C2BB43062454C36600C11746 /* pngfind.com-white-rectangle-png-1205004.png */; };
+		C2BB43092454E88900C11746 /* gecici.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BB43082454E88900C11746 /* gecici.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteLocationsViewController.swift; sourceTree = "<group>"; };
 		C2A5DAEC2432573F001ECB3A /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		C2BB43062454C36600C11746 /* pngfind.com-white-rectangle-png-1205004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pngfind.com-white-rectangle-png-1205004.png"; path = "../../../Downloads/pngfind.com-white-rectangle-png-1205004.png"; sourceTree = "<group>"; };
+		C2BB43082454E88900C11746 /* gecici.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gecici.swift; sourceTree = "<group>"; };
 		F903868BA90278F60FFE89FB /* libPods-gezilecekYerler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gezilecekYerler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				C255FA20242E30CC0026FE73 /* favoritesViewController.swift */,
 				C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */,
 				C2A5DAEC2432573F001ECB3A /* mapViewController.swift */,
+				C2BB43082454E88900C11746 /* gecici.swift */,
 			);
 			path = gezilecekYerler;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				C2A5DAED2432573F001ECB3A /* mapViewController.swift in Sources */,
 				3D5E404822A58E4F0005CAA6 /* GezilecekYerlerViewController.swift in Sources */,
 				3D5E403822A58AEB0005CAA6 /* ViewController.swift in Sources */,
+				C2BB43092454E88900C11746 /* gecici.swift in Sources */,
 				3DA045D422AC89D500BC2E7F /* VCTableViewCell.swift in Sources */,
 				C255FA23242E3EE90026FE73 /* favoriteLocationsViewController.swift in Sources */,
 				C255FA21242E30CC0026FE73 /* favoritesViewController.swift in Sources */,
