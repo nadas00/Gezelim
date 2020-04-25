@@ -337,55 +337,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-VA-9tb">
-                                <rect key="frame" x="20" y="297" width="374" height="94"/>
-                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="28"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FuH-VA-9tb">
+                                <rect key="frame" x="20" y="345" width="374" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
                                 <color key="tintColor" systemColor="quaternarySystemFillColor" red="0.4549019608" green="0.4549019608" blue="0.50196078430000002" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="İlleri Görüntüle">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <color key="titleShadowColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="HWN-S1-tnm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muf-zc-dv0">
-                                <rect key="frame" x="20" y="399" width="374" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="1vi-4A-ht6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="28"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="muf-zc-dv0">
+                                <rect key="frame" x="20" y="447" width="374" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
                                 <color key="tintColor" systemColor="quaternarySystemFillColor" red="0.4549019608" green="0.4549019608" blue="0.50196078430000002" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="Favorileri Görüntüle">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <color key="titleShadowColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="c29-7Z-cm2" kind="show" id="BgU-hf-rxh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="d1c-Fr-AHO">
-                                <rect key="frame" x="20" y="117" width="374" height="172"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="d1c-Fr-AHO">
+                                <rect key="frame" x="20" y="117" width="374" height="154"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="172" id="Aav-Fz-dC5"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="top" secondItem="bYK-dl-fhe" secondAttribute="top" constant="73" id="3Si-K6-oPT"/>
-                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="leading" secondItem="Bqd-XQ-Uab" secondAttribute="leadingMargin" id="DnN-rz-J9y"/>
-                            <constraint firstItem="muf-zc-dv0" firstAttribute="top" secondItem="FuH-VA-9tb" secondAttribute="bottom" constant="8" id="Fhr-9B-ZWF"/>
-                            <constraint firstItem="FuH-VA-9tb" firstAttribute="top" secondItem="d1c-Fr-AHO" secondAttribute="bottom" constant="8" id="JJ1-my-wDs"/>
-                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="leading" secondItem="FuH-VA-9tb" secondAttribute="leading" id="Qky-6H-Bu0"/>
-                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="trailing" secondItem="FuH-VA-9tb" secondAttribute="trailing" id="VMk-D4-whs"/>
-                            <constraint firstItem="bYK-dl-fhe" firstAttribute="bottom" secondItem="muf-zc-dv0" secondAttribute="bottom" constant="126" id="Wpw-RJ-ON6"/>
-                            <constraint firstItem="FuH-VA-9tb" firstAttribute="leading" secondItem="muf-zc-dv0" secondAttribute="leading" id="hvZ-nB-9UO"/>
-                            <constraint firstItem="FuH-VA-9tb" firstAttribute="trailing" secondItem="muf-zc-dv0" secondAttribute="trailing" id="lzI-zq-f2e"/>
-                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="trailing" secondItem="Bqd-XQ-Uab" secondAttribute="trailingMargin" id="xY2-zl-vFE"/>
+                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="leading" secondItem="FuH-VA-9tb" secondAttribute="leading" id="DwT-hq-AUw"/>
+                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="trailing" secondItem="FuH-VA-9tb" secondAttribute="trailing" id="Jvi-lG-c9Z"/>
+                            <constraint firstItem="d1c-Fr-AHO" firstAttribute="top" secondItem="bYK-dl-fhe" secondAttribute="top" constant="73" id="O2Y-Rr-CML"/>
+                            <constraint firstItem="FuH-VA-9tb" firstAttribute="top" secondItem="d1c-Fr-AHO" secondAttribute="bottom" constant="74" id="i1m-Ag-h4G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bYK-dl-fhe"/>
                     </view>
@@ -393,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzw-uA-F3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="822.32142857142856"/>
+            <point key="canvasLocation" x="137.68115942028987" y="820.92391304347836"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="Edi-ht-k4W">
@@ -611,8 +602,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2oS-ES-CDN">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" showsUserLocation="YES" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oS-ES-CDN">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <connections>
+                                    <outlet property="delegate" destination="b0Z-Og-y2v" id="rkg-6U-yxJ"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -643,6 +637,5 @@
         <image name="goforward" catalog="system" width="121" height="128"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="topBanner.png" width="2713" height="1172"/>
     </resources>
 </document>

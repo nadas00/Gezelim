@@ -31,7 +31,7 @@ class mapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    var myInitLocation = CLLocationCoordinate2D(latitude: 38.376324, longitude: 27.142932)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +45,15 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         
         
         mapView.delegate=self
-     
-        let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
-        let region = MKCoordinateRegion(center: myInitLocation, span: span)
-        createPolyline()
-        mapView.setRegion(region, animated: true)
-
+        
+        var myInitLocation = CLLocationCoordinate2D(latitude: lats[0], longitude: longs[0])
+        let span = MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3)
+             let region = MKCoordinateRegion(center: myInitLocation, span: span)
+           
+             mapView.setRegion(region, animated: true)
+        
+          createPolyline()
+  
         
     }
     

@@ -38,6 +38,7 @@
 		C255FA21242E30CC0026FE73 /* favoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255FA20242E30CC0026FE73 /* favoritesViewController.swift */; };
 		C255FA23242E3EE90026FE73 /* favoriteLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */; };
 		C2A5DAED2432573F001ECB3A /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A5DAEC2432573F001ECB3A /* mapViewController.swift */; };
+		C2BB43072454C36600C11746 /* pngfind.com-white-rectangle-png-1205004.png in Resources */ = {isa = PBXBuildFile; fileRef = C2BB43062454C36600C11746 /* pngfind.com-white-rectangle-png-1205004.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		C255FA20242E30CC0026FE73 /* favoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesViewController.swift; sourceTree = "<group>"; };
 		C255FA22242E3EE90026FE73 /* favoriteLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteLocationsViewController.swift; sourceTree = "<group>"; };
 		C2A5DAEC2432573F001ECB3A /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
+		C2BB43062454C36600C11746 /* pngfind.com-white-rectangle-png-1205004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pngfind.com-white-rectangle-png-1205004.png"; path = "../../../Downloads/pngfind.com-white-rectangle-png-1205004.png"; sourceTree = "<group>"; };
 		F903868BA90278F60FFE89FB /* libPods-gezilecekYerler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gezilecekYerler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				3DBF546722A7F97F00C3E4C3 /* topkapi.jpg */,
+				C2BB43062454C36600C11746 /* pngfind.com-white-rectangle-png-1205004.png */,
 				3DBF546522A7F93F00C3E4C3 /* sultanahmet.jpg */,
 				3DBF546922A7FA4300C3E4C3 /* alsancak.jpg */,
 				3DBF546322A7F90300C3E4C3 /* ayasofya.jpg */,
@@ -240,6 +243,7 @@
 				3DBF547022A7FF0500C3E4C3 /* kemeralti.jpg in Resources */,
 				3DA045D622AC8BD400BC2E7F /* izmir-buyuksehir-belediyesi-vector-logo-small.png in Resources */,
 				3DA045DA22AC8FA800BC2E7F /* ank.jpg in Resources */,
+				C2BB43072454C36600C11746 /* pngfind.com-white-rectangle-png-1205004.png in Resources */,
 				3D5E404022A58AED0005CAA6 /* LaunchScreen.storyboard in Resources */,
 				3D2FCD3422A8610D00ACA7C3 /* topBanner.png in Resources */,
 				3DBF546A22A7FA4300C3E4C3 /* alsancak.jpg in Resources */,
