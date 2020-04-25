@@ -33,10 +33,34 @@ class tanitimViewController: UIViewController {
     
     
   
+    var longsOfLocation = 0.0
+    var latsOfLocation = 0.0
+    
     
     @IBOutlet weak var baslik: UILabel!
     @IBOutlet weak var aciklama: UITextView!
     @IBOutlet weak var slideImages: UIImageView!
+    @IBAction func shareLocation(_ sender: Any) {
+        let activityController = UIActivityViewController(activityItems: ["Bu mekana göz atmanı istiyorum!"," ",baslik.text!," ",descriptionData,"Gezelim(iOS) uygulaması Kullanılarak Gönderildi"], applicationActivities: nil)
+        present(activityController,animated: true,completion: nil)
+        
+    }
+    @IBAction func showOnMap(_ sender: Any) {
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMap" {
+                          
+                          
+ let destinationVC = segue.destination as! mapViewController
+            destinationVC.locationNames = [topicData]
+            destinationVC.longs = [longsOfLocation]
+            destinationVC.lats = [latsOfLocation]
+        
+    }
+    }
     
     
     var ref: DatabaseReference!
@@ -81,6 +105,12 @@ class tanitimViewController: UIViewController {
                               self.aciklama.text=self.descriptionData
                              
                           }
+            
+            //long reciever
+            self.longsOfLocation = snapshot.childSnapshot(forPath: "long").value as! Double
+            
+            //lat reciever
+            self.latsOfLocation = snapshot.childSnapshot(forPath: "lat").value as! Double
             
                     })
         

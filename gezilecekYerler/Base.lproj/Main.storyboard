@@ -257,8 +257,8 @@
                                 <rect key="frame" x="20" y="93.999999999999986" width="374" height="213.66666666666669"/>
                                 <color key="tintColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BC-jT-38n">
-                                <rect key="frame" x="20" y="335" width="374" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BC-jT-38n">
+                                <rect key="frame" x="119" y="335" width="175" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="Kx6-Kd-DfE"/>
                                 </constraints>
@@ -267,19 +267,53 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQ1-Qg-jJO">
+                                <rect key="frame" x="20" y="344" width="91" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="62d-GN-EBq"/>
+                                </constraints>
+                                <state key="normal" title="Göster" image="mappin" catalog="system"/>
+                                <connections>
+                                    <action selector="showOnMap:" destination="RzP-wK-973" eventType="touchUpInside" id="Uc3-jf-0XG"/>
+                                    <segue destination="b0Z-Og-y2v" kind="show" identifier="toMap" id="PPM-fd-zWD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sd3-d8-HBq">
+                                <rect key="frame" x="283" y="344" width="111" height="23"/>
+                                <state key="normal" title="Paylaş" image="square.and.arrow.up" catalog="system">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Paylaş">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="18"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="shareLocation:" destination="RzP-wK-973" eventType="touchUpInside" id="Y2w-JU-RGZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0BC-jT-38n" firstAttribute="centerX" secondItem="DRb-CB-FUZ" secondAttribute="centerX" id="04f-cI-WFJ"/>
                             <constraint firstItem="ya5-Yj-i7v" firstAttribute="leading" secondItem="DRb-CB-FUZ" secondAttribute="leading" id="5yW-JR-eCP"/>
+                            <constraint firstItem="bQ1-Qg-jJO" firstAttribute="leading" secondItem="0BC-jT-38n" secondAttribute="leading" constant="-99" id="70m-LY-wZb"/>
                             <constraint firstItem="0BC-jT-38n" firstAttribute="top" secondItem="G0S-mT-ENx" secondAttribute="top" constant="335" id="A7g-LG-09c"/>
+                            <constraint firstItem="bQ1-Qg-jJO" firstAttribute="centerY" secondItem="0BC-jT-38n" secondAttribute="centerY" id="BJf-gd-gLd"/>
+                            <constraint firstItem="DRb-CB-FUZ" firstAttribute="top" secondItem="sd3-d8-HBq" secondAttribute="bottom" constant="28" id="ISH-Ao-ThQ"/>
                             <constraint firstItem="0BC-jT-38n" firstAttribute="centerX" secondItem="ya5-Yj-i7v" secondAttribute="centerX" id="JDa-zY-oyk"/>
+                            <constraint firstItem="sd3-d8-HBq" firstAttribute="leading" secondItem="bQ1-Qg-jJO" secondAttribute="trailing" constant="172" id="Trj-Hd-Ysg"/>
                             <constraint firstItem="ya5-Yj-i7v" firstAttribute="top" secondItem="tPa-MW-A6I" secondAttribute="top" constant="51" id="VDM-ag-9HQ"/>
+                            <constraint firstItem="sd3-d8-HBq" firstAttribute="trailing" secondItem="0BC-jT-38n" secondAttribute="trailing" constant="100" id="VbM-Ir-FOd"/>
                             <constraint firstItem="DRb-CB-FUZ" firstAttribute="leading" secondItem="G0S-mT-ENx" secondAttribute="leadingMargin" id="Wn2-7g-NU2"/>
                             <constraint firstItem="0BC-jT-38n" firstAttribute="centerX" secondItem="G0S-mT-ENx" secondAttribute="centerX" id="X8B-ru-Ffb"/>
+                            <constraint firstItem="sd3-d8-HBq" firstAttribute="centerY" secondItem="0BC-jT-38n" secondAttribute="centerY" id="XvX-Bm-6zE"/>
                             <constraint firstItem="0BC-jT-38n" firstAttribute="top" secondItem="ya5-Yj-i7v" secondAttribute="bottom" constant="27" id="Yh9-aS-M4A"/>
-                            <constraint firstItem="0BC-jT-38n" firstAttribute="leading" secondItem="tPa-MW-A6I" secondAttribute="leading" constant="20" id="cNO-IQ-Xob"/>
+                            <constraint firstItem="0BC-jT-38n" firstAttribute="leading" secondItem="tPa-MW-A6I" secondAttribute="leading" constant="119" id="cNO-IQ-Xob"/>
                             <constraint firstItem="tPa-MW-A6I" firstAttribute="bottom" secondItem="DRb-CB-FUZ" secondAttribute="bottom" constant="47" id="gZY-Fh-aqI"/>
+                            <constraint firstItem="DRb-CB-FUZ" firstAttribute="top" secondItem="bQ1-Qg-jJO" secondAttribute="bottom" constant="28" id="pbo-m9-53u"/>
                             <constraint firstItem="DRb-CB-FUZ" firstAttribute="top" secondItem="0BC-jT-38n" secondAttribute="bottom" constant="19" id="wrc-63-Bvp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tPa-MW-A6I"/>
@@ -597,13 +631,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWi-hY-cWq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2708.6956521739135" y="812.77173913043487"/>
+            <point key="canvasLocation" x="3010" y="823"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PPM-fd-zWD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.png" width="512" height="512"/>
         <image name="bottomBanner.png" width="3465" height="1148"/>
         <image name="goforward" catalog="system" width="121" height="128"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="topBanner.png" width="2713" height="1172"/>
     </resources>
 </document>
