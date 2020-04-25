@@ -75,9 +75,33 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deneme = UIContextualAction(style: .normal, title: "DENEME") { (action, view, nil) in
             
+var swipedLocation = 0
+            var postDataIndex=1
+            if self.searching{
+
+                
+                for index in self.postData{
+                    if(index == self.searchGezilecekYerler[indexPath.item].description){
+                        swipedLocation = postDataIndex
+                 
+                       
+                        
+                    }
+                    postDataIndex+=1
+                }
+                
+                
+
+
+            }else{
+                 swipedLocation = indexPath.item+1
+                
+
+               
+
+            }
             
-            
-             let swipedLocation = indexPath.item+1
+     
 //             print(swipedLocation)
 //             print(self.secilmisSehir)
             

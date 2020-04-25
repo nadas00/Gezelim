@@ -19,15 +19,38 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
     var favSecilenSehir = ""
     var favSecilenKey = 0
     var postKeyData = [Int]()
+      var searchFavSehirler = [String]()
+        var searching = false
+     @IBOutlet weak var favoritesTable: UITableView!
+   
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postData.count
+            if searching{
+                return searchFavSehirler.count
+          }else{
+              return postData.count
+          }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favoritesTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VCTableViewCell
-         cell.labelCell.text=postData[indexPath.row]
+          
+               if searching{
+                   cell.labelCell.text = searchFavSehirler[indexPath.row]
+                   
+                  
+                   }
+               
+               else{
+                   
+               //cell ismi belirler
+                  cell.labelCell.text=postData[indexPath.row]
+                  
+               }
             return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -72,9 +95,34 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
               let deneme = UIContextualAction(style: .destructive, title: "Kaldır") { (action, view, nil) in
+                
+                  var swipedLocation = 0
+                  var postDataIndex=0
+                  if self.searching{
+
+                      
+                      for index in self.postData{
+                          if(index == self.searchFavSehirler[indexPath.item].description){
+                            swipedLocation = self.postKeyData[postDataIndex]
+                       
+                             
+                              
+                          }
+                          postDataIndex+=1
+                      }
+                      
+                      
+
+
+                  }else{
+                    swipedLocation = self.postKeyData[indexPath.item]
+                      
+
+                     
+
+                  }
                   
-                  
-                let swipedLocation = self.postKeyData[indexPath.item]
+              
                 
                 
                 
@@ -93,8 +141,8 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                
                     
                     self.ref.child("favorites").child(String(self.favSecilenKey)).removeValue()
-                  
-                        
+               
+                    
                        self.favoritesTable.reloadData()
                     
                })
@@ -108,7 +156,9 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                             
                                
                                     self.ref.child("favorites").child(String(swipedLocation)).setValue(["provinceName": actualPost])
-                                   
+                                   if self.searching{
+                                                     self.searchFavSehirler.remove(at: postDataIndex-1)
+                                                  }
                                 self.postData.remove(at: indexPath.item)
                                 self.postKeyData.remove(at: indexPath.item)
                                   self.favoritesTable.reloadData()
@@ -125,7 +175,7 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
           
 
     
-    @IBOutlet weak var favoritesTable: UITableView!
+   
     
     
 
@@ -183,4 +233,19 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
     }
     */
 
+}
+
+
+extension favoritesViewController : UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+
+            searchFavSehirler = postData.filter({$0.prefix(searchText.count)==searchText})
+                   searching=true
+                   favoritesTable.reloadData()
+
+       
+    }
+    
 }
