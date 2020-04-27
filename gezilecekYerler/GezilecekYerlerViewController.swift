@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 
 class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -77,6 +78,7 @@ class GezilecekYerlerViewController: UIViewController, UITableViewDelegate, UITa
             
 var swipedLocation = 0
             var postDataIndex=1
+                               let userID = Auth.auth().currentUser?.uid
             if self.searching{
 
                 
@@ -131,14 +133,14 @@ var swipedLocation = 0
                                             }
              
            
-                   
+
                                     
-                self.ref.child("favorites").child(String(self.secilmisSehir)).queryOrdered(byChild: "locationName").queryEqual(toValue: post).observeSingleEvent(of: .value, with: { snapshot in
+                self.ref.child("favorites").child(String(self.secilmisSehir)).child(userID!).queryOrdered(byChild: "locationName").queryEqual(toValue: post).observeSingleEvent(of: .value, with: { snapshot in
 
                                          if (snapshot.value is NSNull) {
                                              print("Name is not in use")
 
-                                            self.ref.child("favorites").child(String(self.secilmisSehir)).childByAutoId().setValue(["locationName": post,"lat":post2, "long":post3])
+                                            self.ref.child("favorites").child(String(self.secilmisSehir)).child(userID!).childByAutoId().setValue(["locationName": post,"lat":post2, "long":post3])
                                          } else {
                                              print("Name is in use")
                                          }
@@ -246,6 +248,7 @@ var swipedLocation = 0
          self.gezilecekYerlerTableView.separatorColor = UIColor.clear
         super.viewDidLoad()
          addNavBarImage()
+        
         
         print(secilmisSehir)
         do {
