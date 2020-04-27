@@ -153,12 +153,12 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                 
                            self.ref?.observeSingleEvent(of: .value, with: { (snapshot) in
                            
-                            let post = snapshot.childSnapshot(forPath: "favorites").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: userID!).childSnapshot(forPath: "provinceName").value as? String
-                            if let actualPost = post{
+                            let post = snapshot.childSnapshot(forPath: "favorites").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "provinceName").value as? String
+                            if post != nil{
                                 
                             
                                
-                                self.ref.child("favorites").child(String(swipedLocation)).child(userID!).setValue(["provinceName": actualPost])
+                                self.ref.child("favorites").child(String(swipedLocation)).child(userID!).setValue([])
                                    if self.searching{
                                                      self.searchFavSehirler.remove(at: postDataIndex-1)
                                                   }
