@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 class favoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -98,6 +99,8 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                 
                   var swipedLocation = 0
                   var postDataIndex=0
+                let userID = Auth.auth().currentUser?.uid
+
                   if self.searching{
 
                       
@@ -140,7 +143,7 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                      
                
                     
-                    self.ref.child("favorites").child(String(self.favSecilenKey)).removeValue()
+                    self.ref.child("favorites").child(String(self.favSecilenKey)).child(userID!).removeValue()
                
                     
                        self.favoritesTable.reloadData()
@@ -150,12 +153,12 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                 
                            self.ref?.observeSingleEvent(of: .value, with: { (snapshot) in
                            
-                           let post = snapshot.childSnapshot(forPath: "favorites").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: "provinceName").value as? String
+                            let post = snapshot.childSnapshot(forPath: "favorites").childSnapshot(forPath: String(swipedLocation)).childSnapshot(forPath: userID!).childSnapshot(forPath: "provinceName").value as? String
                             if let actualPost = post{
                                 
                             
                                
-                                    self.ref.child("favorites").child(String(swipedLocation)).setValue(["provinceName": actualPost])
+                                self.ref.child("favorites").child(String(swipedLocation)).child(userID!).setValue(["provinceName": actualPost])
                                    if self.searching{
                                                      self.searchFavSehirler.remove(at: postDataIndex-1)
                                                   }
@@ -181,6 +184,9 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(false)
+        
+          let userID = Auth.auth().currentUser?.uid
+        
         postData.removeAll()
         postKeyData.removeAll()
           //set firebase reference
@@ -194,7 +200,7 @@ class favoritesViewController: UIViewController, UITableViewDataSource, UITableV
                               let postKey = snapshot.key
                     
                                if let actualPost = post{
-                                if snapshot.childrenCount>1 {
+                                if snapshot.childSnapshot(forPath: userID!).childrenCount>0 {
                                      self.postData.append(actualPost)
                                     self.postKeyData.append(Int(postKey)!)
                                 }
