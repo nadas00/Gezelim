@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -76,16 +77,18 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     
   
       func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let userID = Auth.auth().currentUser?.uid
+
               let deneme = UIContextualAction(style: .destructive, title: "Kaldır") { (action, view, nil) in
                   
  let swipedLocation = indexPath.item
                 print(self.selectChild[swipedLocation])
                 
                 
-                self.ref?.child("favorites").child(String(self.secilmisFavLoc)).observeSingleEvent(of:.value, with: { (snapshot) in
+                self.ref?.child("favorites").child(String(self.secilmisFavLoc)).child(userID!).observeSingleEvent(of:.value, with: { (snapshot) in
                    
                     
-                    self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(self.selectChild[swipedLocation]).removeValue()
+                    self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(userID!).child(self.selectChild[swipedLocation]).removeValue()
                                    
                                    self.selectChild.remove(at: swipedLocation)
                     self.postData.remove(at: swipedLocation)
@@ -116,6 +119,8 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
     
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+               let userID = Auth.auth().currentUser?.uid
         let movObjTemp = postData[sourceIndexPath.item]
                             let movLong = longs[sourceIndexPath.item]
                             let movLats = lats[sourceIndexPath.item]
@@ -135,11 +140,11 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
         
                         
     
-        self.ref.child("favorites").child(String(self.secilmisFavLoc)).observe(.childAdded, with: { snapshot in
+        self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(userID!).observe(.childAdded, with: { snapshot in
                                   
                                   for index in 0...self.postData.count-1{
                                       
-                                      self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(self.selectChild[index]).updateChildValues(["locationName":self.postData[index],"lat":self.lats[index],"long":self.longs[index]])
+                                      self.ref.child("favorites").child(String(self.secilmisFavLoc)).child(userID!).child(self.selectChild[index]).updateChildValues(["locationName":self.postData[index],"lat":self.lats[index],"long":self.longs[index]])
                                      
                                   }
                                   
@@ -175,9 +180,9 @@ class favoriteLocationsViewController: UIViewController, UITableViewDelegate, UI
            //retrieve post and listen for changes
         
         
+         let userID = Auth.auth().currentUser?.uid
         
-        
-          ref?.child("favorites").child(String(secilmisFavLoc)).observe(.childAdded, with: { (snapshot) in
+          ref?.child("favorites").child(String(secilmisFavLoc)).child(userID!).observe(.childAdded, with: { (snapshot) in
               
              let childatValue = snapshot.key
             self.selectChild.append(childatValue)
