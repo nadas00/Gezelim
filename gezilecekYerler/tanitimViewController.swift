@@ -129,7 +129,7 @@ class tanitimViewController: UIViewController {
                                                            {
                                                                self.imgData.append(actualPost3)
                                                                print(actualPost3)
-                                                            let storageRef = self.storage.reference().child(self.imgData[0]+".png")
+                                                            let storageRef = self.storage.reference().child(self.imgData[0]+".jpg")
                                                             storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                                                                       if let error = error {
                                                                           print("PLASESEE")
@@ -191,7 +191,7 @@ class tanitimViewController: UIViewController {
                           if self.selectedPhoto == imageCount{
                               self.selectedPhoto = 0
                           }
-                          let storageRef = self.storage.reference().child(self.imgData[self.selectedPhoto]+".png")
+                          let storageRef = self.storage.reference().child(self.imgData[self.selectedPhoto]+".jpg")
                           storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                                     if let error = error {
                                         print("PLASESEE")
